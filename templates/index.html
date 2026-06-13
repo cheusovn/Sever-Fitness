@@ -79,13 +79,14 @@
         </div>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
         <div class="trainer-card reveal-zoom">
             <img src="{{ url_for('static', filename='trainer4.jpg') }}" alt="Иван">
             <div class="trainer-info-overlay">
                 <div class="text-xs text-ember font-bold uppercase tracking-widest">Пауэрлифтинг</div>
                 <h3 class="font-display font-black text-2xl mt-1">Иван</h3>
                 <p class="text-sm text-white/70 mt-1">Мастер спорта · стаж 23 года</p>
+                <p class="text-xs text-ember mt-2 font-semibold">от 18 000 ₽</p>
             </div>
         </div>
         <div class="trainer-card reveal-zoom delay-1">
@@ -94,6 +95,7 @@
                 <div class="text-xs text-ember font-bold uppercase tracking-widest">Нутрициология</div>
                 <h3 class="font-display font-black text-2xl mt-1">Инга</h3>
                 <p class="text-sm text-white/70 mt-1">Фитнес-инструктор · 3 года</p>
+                <p class="text-xs text-ember mt-2 font-semibold">от 1 000 ₽</p>
             </div>
         </div>
         <div class="trainer-card reveal-zoom delay-2">
@@ -102,14 +104,34 @@
                 <div class="text-xs text-ember font-bold uppercase tracking-widest">Персональный</div>
                 <h3 class="font-display font-black text-2xl mt-1">Милена</h3>
                 <p class="text-sm text-white/70 mt-1">5 лет опыта</p>
+                <p class="text-xs text-ember mt-2 font-semibold">1 111 — 15 555 ₽</p>
             </div>
         </div>
-        <div class="trainer-card reveal-zoom delay-3">
-            <img src="{{ url_for('static', filename='trainer1.jpg') }}" alt="Регина">
+        <div class="trainer-card reveal-zoom">
+            <div class="trainer-initial" data-letter="К"></div>
             <div class="trainer-info-overlay">
-                <div class="text-xs text-ember font-bold uppercase tracking-widest">Групповые</div>
-                <h3 class="font-display font-black text-2xl mt-1">Регина</h3>
-                <p class="text-sm text-white/70 mt-1">Групповые и индивидуальные · 5 лет</p>
+                <div class="text-xs text-ember font-bold uppercase tracking-widest">Хатха-йога</div>
+                <h3 class="font-display font-black text-2xl mt-1">Ксения</h3>
+                <p class="text-sm text-white/70 mt-1">Инструктор по хатха-йоге</p>
+                <p class="text-xs text-ember mt-2 font-semibold">600 ₽</p>
+            </div>
+        </div>
+        <div class="trainer-card reveal-zoom delay-1">
+            <div class="trainer-initial" data-letter="Е"></div>
+            <div class="trainer-info-overlay">
+                <div class="text-xs text-ember font-bold uppercase tracking-widest">Стретчинг</div>
+                <h3 class="font-display font-black text-2xl mt-1">Екатерина</h3>
+                <p class="text-sm text-white/70 mt-1">Растяжка и гибкость</p>
+                <p class="text-xs text-ember mt-2 font-semibold">500 ₽</p>
+            </div>
+        </div>
+        <div class="trainer-card reveal-zoom delay-2">
+            <div class="trainer-initial" data-letter="Дж"></div>
+            <div class="trainer-info-overlay">
+                <div class="text-xs text-ember font-bold uppercase tracking-widest">Джампинг</div>
+                <h3 class="font-display font-black text-2xl mt-1">Инструкторы</h3>
+                <p class="text-sm text-white/70 mt-1">Прыжки на батутах · энергия и кардио</p>
+                <p class="text-xs text-ember mt-2 font-semibold">600 ₽</p>
             </div>
         </div>
     </div>
@@ -197,7 +219,7 @@
         <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-purple-500/10 blur-3xl"></div>
         <div class="relative">
             <h2 class="section-title">Готов начать?</h2>
-            <p class="section-sub mx-auto mt-4">Первая тренировка — бесплатно. Позвони и приходи знакомиться с клубом.</p>
+            <p class="section-sub mx-auto mt-4">Звони — расскажем про клуб, программы и подберём абонемент под твою цель.</p>
             <a href="tel:+79129565511" class="btn-primary mt-8">📞 +7 (912) 956-55-11</a>
         </div>
     </div>
