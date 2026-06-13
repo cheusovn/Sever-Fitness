@@ -1,227 +1,227 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEVER FITNESS — Усинск</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
-</head>
-<body>
+{% extends "base.html" %}
 
-    <!-- 🌟 ГЛОБАЛЬНЫЙ АНИМИРОВАННЫЙ ФОН (свечение + частицы) -->
-    <div class="global-bg">
-        <div class="glow-orb orb1"></div>
-        <div class="glow-orb orb2"></div>
-        <div class="glow-orb orb3"></div>
-        <div class="global-particles">
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
+{% block content %}
+
+<section class="relative max-w-7xl mx-auto px-6 pt-12 pb-24">
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7">
+            <div class="section-eyebrow reveal">★ ПРЕМИАЛЬНЫЙ КЛУБ · УСИНСК</div>
+            <h1 class="hero-display mt-6 reveal delay-1">
+                СИЛА<br>
+                <span class="em">В КАЖДОМ</span><br>
+                ДНЕ
+            </h1>
+            <p class="mt-8 text-lg text-white/60 max-w-xl reveal delay-2 text-balance">
+                SEVER FITNESS — место, где современные тренажёры, опытные тренеры и атмосфера превращают тренировку в ритуал. Найди свою форму.
+            </p>
+            <div class="mt-10 flex flex-wrap gap-4 reveal delay-3">
+                <a href="#price" class="btn-primary">Смотреть цены →</a>
+                <a href="tel:+79129565511" class="btn-ghost">📞 Записаться</a>
+            </div>
+            <div class="mt-14 grid grid-cols-3 gap-8 max-w-lg reveal delay-4">
+                <div><div class="stat-num">5000+</div><div class="text-xs text-white/50 mt-2 uppercase tracking-wider">Клиентов</div></div>
+                <div><div class="stat-num">10</div><div class="text-xs text-white/50 mt-2 uppercase tracking-wider">Лет в Усинске</div></div>
+                <div><div class="stat-num">24/7</div><div class="text-xs text-white/50 mt-2 uppercase tracking-wider">Доступ</div></div>
+            </div>
+        </div>
+        <div class="lg:col-span-5 reveal-right">
+            <div class="hero-img-wrap aspect-[4/5]">
+                <img src="{{ url_for('static', filename='gym1.jpg') }}" alt="SEVER FITNESS">
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="marquee py-10 border-y border-white/5">
+    <div class="marquee-track">
+        <span>СИЛА</span><span class="fill">·</span>
+        <span>ВЫНОСЛИВОСТЬ</span><span class="fill">·</span>
+        <span>РЕЗУЛЬТАТ</span><span class="fill">·</span>
+        <span>ДИСЦИПЛИНА</span><span class="fill">·</span>
+        <span>СИЛА</span><span class="fill">·</span>
+        <span>ВЫНОСЛИВОСТЬ</span><span class="fill">·</span>
+        <span>РЕЗУЛЬТАТ</span><span class="fill">·</span>
+        <span>ДИСЦИПЛИНА</span><span class="fill">·</span>
+    </div>
+</div>
+
+<section class="section" id="promo">
+    <div class="text-center mb-12">
+        <span class="section-eyebrow reveal">Спецпредложения</span>
+        <h2 class="section-title reveal delay-1">АКЦИИ МЕСЯЦА</h2>
+        <p class="section-sub mx-auto reveal delay-2">Успей воспользоваться выгодными предложениями клуба</p>
+    </div>
+
+    <div class="slider reveal-zoom">
+        <div class="slides-track" id="track">
+            <div class="slide"><img src="{{ url_for('static', filename='promo1.jpg') }}" alt="Акция 1"></div>
+            <div class="slide"><img src="{{ url_for('static', filename='promo2.jpg') }}" alt="Акция 2"></div>
+        </div>
+        <button class="slider-arrow prev" onclick="changeSlide(-1)">‹</button>
+        <button class="slider-arrow next" onclick="changeSlide(1)">›</button>
+        <div class="slider-dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
         </div>
     </div>
 
-    <!-- МЕНЮ -->
-    <header>
-        <div class="logo">SEVER<span>FITNESS</span></div>
-        <nav>
-            <a href="{{ url_for('home') }}">Главная</a>
-            <a href="{{ url_for('home') }}#promo">Акции</a>
-            <a href="{{ url_for('home') }}#trainers">Тренеры</a>
-            <a href="{{ url_for('home') }}#gallery">Клуб</a>
-            <a href="{{ url_for('home') }}#price">Прайс</a>
-            <a href="{{ url_for('about') }}">О нас</a>
-        </nav>
-    </header>
+    <div class="text-center mt-12">
+        <a href="tel:+79129565511" class="btn-primary">Получить акцию →</a>
+    </div>
+</section>
 
-    <!-- ГЛАВНЫЙ БЛОК (HERO) с фоном gym1.jpg -->
-    <section class="hero" id="hero">
-        <div class="hero-bg-zoom" style="background-image: url('{{ url_for('static', filename='gym1.jpg') }}');"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-glow"></div>
-
-        <div class="hero-particles">
-            <span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span>
+<section class="section" id="trainers">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+        <div>
+            <span class="section-eyebrow reveal">Команда</span>
+            <h2 class="section-title reveal delay-1">НАШИ ТРЕНЕРЫ</h2>
+            <p class="section-sub reveal delay-2">Мастера спорта, нутрициологи, тренеры с многолетним стажем</p>
         </div>
+    </div>
 
-        <h1 class="hero-title">
-            <span class="word">SEVER</span>
-            <span class="word">FITNESS</span>
-        </h1>
-        <p class="reveal delay-1">Твой путь к идеальной форме начинается здесь</p>
-        <a href="#price" class="btn reveal delay-2">Смотреть цены</a>
-    </section>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <div class="trainer-card reveal-zoom">
+            <img src="{{ url_for('static', filename='trainer4.jpg') }}" alt="Иван">
+            <div class="trainer-info-overlay">
+                <div class="text-xs text-ember font-bold uppercase tracking-widest">Пауэрлифтинг</div>
+                <h3 class="font-display font-black text-2xl mt-1">Иван</h3>
+                <p class="text-sm text-white/70 mt-1">Мастер спорта · стаж 23 года</p>
+            </div>
+        </div>
+        <div class="trainer-card reveal-zoom delay-1">
+            <img src="{{ url_for('static', filename='trainer2.jpg') }}" alt="Инга">
+            <div class="trainer-info-overlay">
+                <div class="text-xs text-ember font-bold uppercase tracking-widest">Нутрициология</div>
+                <h3 class="font-display font-black text-2xl mt-1">Инга</h3>
+                <p class="text-sm text-white/70 mt-1">Фитнес-инструктор · 3 года</p>
+            </div>
+        </div>
+        <div class="trainer-card reveal-zoom delay-2">
+            <img src="{{ url_for('static', filename='trainer3.jpg') }}" alt="Милена">
+            <div class="trainer-info-overlay">
+                <div class="text-xs text-ember font-bold uppercase tracking-widest">Персональный</div>
+                <h3 class="font-display font-black text-2xl mt-1">Милена</h3>
+                <p class="text-sm text-white/70 mt-1">5 лет опыта</p>
+            </div>
+        </div>
+        <div class="trainer-card reveal-zoom delay-3">
+            <img src="{{ url_for('static', filename='trainer1.jpg') }}" alt="Регина">
+            <div class="trainer-info-overlay">
+                <div class="text-xs text-ember font-bold uppercase tracking-widest">Групповые</div>
+                <h3 class="font-display font-black text-2xl mt-1">Регина</h3>
+                <p class="text-sm text-white/70 mt-1">Групповые и индивидуальные · 5 лет</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-   <!-- АКЦИИ (СОВРЕМЕННЫЙ СЛАЙДЕР) -->
-    <section class="promo" id="promo">
-        <h2>АКЦИИ</h2>
-        <p class="promo-subtitle reveal delay-1">Успей воспользоваться выгодным предложением!</p>
+<section class="section" id="gallery">
+    <div class="text-center mb-12">
+        <span class="section-eyebrow reveal">Клуб</span>
+        <h2 class="section-title reveal delay-1">ЗАГЛЯНИ ВНУТРЬ</h2>
+        <p class="section-sub mx-auto reveal delay-2">Современное пространство, премиум-оборудование, особая атмосфера</p>
+    </div>
 
-        <div class="slider reveal-zoom">
-            <div class="slides-track" id="track">
-                <div class="slide">
-                    <img src="{{ url_for('static', filename='promo1.jpg') }}" alt="Акция 1">
+    <div class="gallery-grid">
+        <div class="gallery-item gi-1 reveal-zoom">
+            <img src="{{ url_for('static', filename='gym1.jpg') }}" alt="Главный зал">
+            <span class="caption">Главный зал</span>
+        </div>
+        <div class="gallery-item gi-2 reveal-zoom delay-1">
+            <img src="{{ url_for('static', filename='gym2.jpg') }}" alt="Кардио">
+            <span class="caption">Кардио-зона</span>
+        </div>
+        <div class="gallery-item gi-3 reveal-zoom delay-2">
+            <img src="{{ url_for('static', filename='gym3.jpg') }}" alt="Функциональная">
+            <span class="caption">Функциональная</span>
+        </div>
+        <div class="gallery-item gi-4 reveal-zoom delay-3">
+            <img src="{{ url_for('static', filename='gym4.jpg') }}" alt="Тренажёрный">
+            <span class="caption">Тренажёрный зал</span>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="price">
+    <div class="text-center mb-12">
+        <span class="section-eyebrow reveal">Тарифы</span>
+        <h2 class="section-title reveal delay-1">ПРАЙС</h2>
+        <p class="section-sub mx-auto reveal delay-2">Абонементы без скрытых условий — выбирай удобный формат</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div class="price-card featured reveal-left">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <div class="text-xs text-ember font-bold uppercase tracking-widest">Популярное</div>
+                    <h3 class="font-display font-black text-3xl mt-1">БЕЗЛИМИТ</h3>
                 </div>
-                <div class="slide">
-                    <img src="{{ url_for('static', filename='promo2.jpg') }}" alt="Акция 2">
+                <div class="w-12 h-12 rounded-full bg-ember/20 grid place-items-center text-ember text-xl">∞</div>
+            </div>
+            <div class="price-row"><span class="name">1 месяц</span><span class="val">5 000 ₽</span></div>
+            <div class="price-row"><span class="name">3 месяца</span><span class="val">12 000 ₽</span></div>
+            <div class="price-row"><span class="name">6 месяцев</span><span class="val">18 000 ₽</span></div>
+            <div class="price-row"><span class="name">12 месяцев</span><span class="val">24 000 ₽</span></div>
+            <div class="price-row"><span class="name">Смена владельца</span><span class="val">1 000 ₽</span></div>
+            <ul class="mt-6 space-y-2 text-xs text-white/50">
+                <li>· Заморозка на 6 и 12 мес. — единоразово</li>
+                <li>· Максимальный срок заморозки — 30 дней</li>
+            </ul>
+            <a href="tel:+79129565511" class="btn-primary mt-8 w-full justify-center">Оформить →</a>
+        </div>
+
+        <div class="price-card reveal-right">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <div class="text-xs text-white/40 font-bold uppercase tracking-widest">Гибкость</div>
+                    <h3 class="font-display font-black text-3xl mt-1">ПОСЕЩЕНИЯ</h3>
                 </div>
+                <div class="w-12 h-12 rounded-full bg-white/10 grid place-items-center text-white/70 text-lg">✓</div>
             </div>
-            <button class="slider-arrow prev" onclick="changeSlide(-1)">‹</button>
-            <button class="slider-arrow next" onclick="changeSlide(1)">›</button>
-
-            <div class="slider-dots">
-                <span class="dot active" onclick="goToSlide(0)"></span>
-                <span class="dot" onclick="goToSlide(1)"></span>
-            </div>
+            <div class="price-row"><span class="name">Разовое</span><span class="val">600 ₽</span></div>
+            <div class="price-row"><span class="name">Тариф «Дуэт»</span><span class="val">1 000 ₽</span></div>
+            <div class="price-row"><span class="name">8 посещений</span><span class="val">3 200 ₽</span></div>
+            <div class="price-row"><span class="name">12 посещений</span><span class="val">4 200 ₽</span></div>
+            <ul class="mt-6 space-y-2 text-xs text-white/50">
+                <li>· Абонементы на 8 и 12 посещений — 1 месяц с активации</li>
+                <li>· По истечении 30 дней активация — автоматически</li>
+            </ul>
+            <a href="tel:+79129565511" class="btn-ghost mt-8 w-full justify-center">Записаться →</a>
         </div>
+    </div>
+</section>
 
-        <div style="text-align:center; margin-top:40px;">
-            <a href="tel:+79129565511" class="btn reveal">📞 Получить акцию</a>
+<section class="section">
+    <div class="glass-card relative overflow-hidden p-10 md:p-16 text-center reveal-zoom">
+        <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-ember/20 blur-3xl"></div>
+        <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-purple-500/10 blur-3xl"></div>
+        <div class="relative">
+            <h2 class="section-title">Готов начать?</h2>
+            <p class="section-sub mx-auto mt-4">Первая тренировка — бесплатно. Позвони и приходи знакомиться с клубом.</p>
+            <a href="tel:+79129565511" class="btn-primary mt-8">📞 +7 (912) 956-55-11</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- НАШИ ТРЕНЕРЫ -->
-    <section class="trainers" id="trainers">
-        <h2>НАШИ ТРЕНЕРЫ</h2>
-        <div class="trainers-grid">
-            <div class="trainer-card reveal-zoom">
-                <img src="{{ url_for('static', filename='trainer4.jpg') }}" alt="Иван" class="trainer-photo">
-                <h3>Иван</h3>
-                <p class="trainer-role">Персональный тренер</p>
-                <ul class="trainer-info">
-                    <li>🥇 Мастер спорта по пауэрлифтингу</li>
-                    <li>🏋️ Спортивный стаж 23 года</li>
-                    <li>⏱ Тренерский стаж 10 лет</li>
-                </ul>
-            </div>
-            <div class="trainer-card reveal-zoom delay-1">
-                <img src="{{ url_for('static', filename='trainer2.jpg') }}" alt="Инга" class="trainer-photo">
-                <h3>Инга</h3>
-                <p class="trainer-role">Персональный тренер</p>
-                <ul class="trainer-info">
-                    <li>🥗 Инструктор по фитнесу и нутрициологии</li>
-                    <li>⏱ Опыт 3 года</li>
-                </ul>
-            </div>
-            <div class="trainer-card reveal-zoom delay-2">
-                <img src="{{ url_for('static', filename='trainer3.jpg') }}" alt="Милена" class="trainer-photo">
-                <h3>Милена</h3>
-                <p class="trainer-role">Персональный тренер</p>
-                <ul class="trainer-info"><li>⏱ 5 лет опыта</li></ul>
-            </div>
-            <div class="trainer-card reveal-zoom delay-3">
-                <img src="{{ url_for('static', filename='trainer1.jpg') }}" alt="Регина" class="trainer-photo">
-                <h3>Регина</h3>
-                <p class="trainer-role">Тренер групповых и индивидуальных программ</p>
-                <ul class="trainer-info"><li>⏱ Опыт 5 лет</li></ul>
-            </div>
-        </div>
-    </section>
+{% endblock %}
 
-    <!-- ФОТО КЛУБА -->
-    <section class="gallery" id="gallery">
-        <h2>ФОТО КЛУБА</h2>
-        <p class="gallery-subtitle reveal delay-1">Загляни внутрь SEVER FITNESS</p>
-        <div class="gallery-grid">
-            <div class="gallery-item big reveal-zoom">
-                <img src="{{ url_for('static', filename='gym1.jpg') }}" alt="Зал 1">
-                <span class="gallery-caption">Современный зал</span>
-            </div>
-            <div class="gallery-item reveal-zoom delay-1">
-                <img src="{{ url_for('static', filename='gym2.jpg') }}" alt="Зал 2">
-                <span class="gallery-caption">Кардио-зона</span>
-            </div>
-            <div class="gallery-item reveal-zoom delay-2">
-                <img src="{{ url_for('static', filename='gym3.jpg') }}" alt="Зал 3">
-                <span class="gallery-caption">Функциональная зона</span>
-            </div>
-            <div class="gallery-item wide reveal-zoom delay-3">
-                <img src="{{ url_for('static', filename='gym4.jpg') }}" alt="Зал 4">
-                <span class="gallery-caption">Тренажёрный зал</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- ПРАЙС -->
-    <section class="price" id="price">
-        <h2>ПРАЙС</h2>
-        <p class="price-subtitle reveal delay-1">Абонементы и посещения</p>
-        <div class="price-grid">
-
-            <div class="price-card reveal-left">
-                <div class="price-card-head">БЕЗЛИМИТ</div>
-                <div class="price-rows">
-                    <div class="price-row"><span class="price-name">1 месяц</span><span class="price-value">5 000 ₽</span></div>
-                    <div class="price-row"><span class="price-name">3 месяца</span><span class="price-value">12 000 ₽</span></div>
-                    <div class="price-row"><span class="price-name">6 месяцев</span><span class="price-value">18 000 ₽</span></div>
-                    <div class="price-row"><span class="price-name">12 месяцев</span><span class="price-value">24 000 ₽</span></div>
-                    <div class="price-row"><span class="price-name">Смена владельца</span><span class="price-value">1 000 ₽</span></div>
-                </div>
-                <ul class="price-notes">
-                    <li>Заморозка абонемента на 6 и 12 месяцев — единоразово</li>
-                    <li>Максимальный срок заморозки — не более 30 дней</li>
-                </ul>
-            </div>
-
-            <div class="price-card reveal-right">
-                <div class="price-card-head">НА ПОСЕЩЕНИЯ</div>
-                <div class="price-rows">
-                    <div class="price-row"><span class="price-name">Разовое</span><span class="price-value">600 ₽</span></div>
-                    <div class="price-row"><span class="price-name">Тариф «Дуэт»</span><span class="price-value">1 000 ₽</span></div>
-                    <div class="price-row"><span class="price-name">8 посещений</span><span class="price-value">3 200 ₽</span></div>
-                    <div class="price-row"><span class="price-name">12 посещений</span><span class="price-value">4 200 ₽</span></div>
-                </div>
-                <ul class="price-notes">
-                    <li>Абонементы на 8 и 12 посещений действуют 1 месяц с момента активации</li>
-                    <li>По истечении 30 дней активация происходит автоматически</li>
-                </ul>
-            </div>
-
-        </div>
-        <div style="text-align:center; margin-top:50px;">
-            <a href="tel:+79129565511" class="btn reveal">📞 Записаться</a>
-        </div>
-    </section>
-
-    <!-- ПОДВАЛ -->
-    <footer>
-        <p>SEVER FITNESS · Усинск </p>
-    </footer>
-
-   <!-- СКРИПТ СЛАЙДЕРА -->
-    <script>
-        let current = 0;
-        const track = document.getElementById('track');
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.dot');
-        const total = slides.length;
-
-        function showSlide(n) {
-            current = (n + total) % total;
-            track.style.transform = `translateX(-${current * 100}%)`;
-            slides.forEach(s => s.classList.remove('is-active'));
-            dots.forEach(d => d.classList.remove('active'));
-            slides[current].classList.add('is-active');
-            dots[current].classList.add('active');
-        }
-        function changeSlide(dir) { showSlide(current + dir); resetTimer(); }
-        function goToSlide(n) { showSlide(n); resetTimer(); }
-        let timer = setInterval(() => showSlide(current + 1), 5000);
-        function resetTimer() {
-            clearInterval(timer);
-            timer = setInterval(() => showSlide(current + 1), 5000);
-        }
-        showSlide(0);
-    </script>
-
-    <!-- 🔥 АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ -->
-    <script>
-        const obs = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
-        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-        document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-zoom,h2').forEach(el => obs.observe(el));
-    </script>
-</body>
-</html>
+{% block scripts %}
+<script>
+    let current = 0;
+    const track = document.getElementById('track');
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const total = slides.length;
+    function showSlide(n) {
+        current = (n + total) % total;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        dots.forEach(d => d.classList.remove('active'));
+        dots[current].classList.add('active');
+    }
+    function changeSlide(dir) { showSlide(current + dir); resetTimer(); }
+    function goToSlide(n) { showSlide(n); resetTimer(); }
+    let timer = setInterval(() => showSlide(current + 1), 5000);
+    function resetTimer() { clearInterval(timer); timer = setInterval(() => showSlide(current + 1), 5000); }
+    showSlide(0);
+</script>
+{% endblock %}

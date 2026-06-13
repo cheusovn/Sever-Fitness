@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block description %}SEVER FITNESS — премиальный фитнес-клуб в Усинске. Современное оборудование, профессиональные тренеры, авторские программы.{% endblock %}">
+    <title>{% block title %}SEVER FITNESS — Усинск{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Manrope:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ink: '#0a0a0f',
+                        ember: '#ff5b1f',
+                        ash: '#1a1a22'
+                    },
+                    fontFamily: {
+                        display: ['Unbounded', 'sans-serif'],
+                        sans: ['Manrope', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-ink text-white antialiased overflow-x-hidden">
+
+    <div class="global-bg fixed inset-0 -z-10 pointer-events-none">
+        <div class="glow-orb orb1"></div>
+        <div class="glow-orb orb2"></div>
+        <div class="glow-orb orb3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <header class="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-ink/60 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="{{ url_for('home') }}" class="logo font-display font-black text-xl tracking-tight">
+                SEVER<span class="text-ember">FITNESS</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="{{ url_for('home') }}" class="nav-link">Главная</a>
+                <a href="{{ url_for('home') }}#promo" class="nav-link">Акции</a>
+                <a href="{{ url_for('courses') }}" class="nav-link">Программы</a>
+                <a href="{{ url_for('home') }}#trainers" class="nav-link">Тренеры</a>
+                <a href="{{ url_for('home') }}#price" class="nav-link">Прайс</a>
+                <a href="{{ url_for('about') }}" class="nav-link">О клубе</a>
+                <a href="{{ url_for('contacts') }}" class="nav-link">Контакты</a>
+            </nav>
+            <a href="tel:+79129565511" class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-ember text-white text-sm font-semibold hover:bg-ember/90 transition shadow-lg shadow-ember/30">
+                <span>Записаться</span>
+            </a>
+            <button id="burger" class="md:hidden w-10 h-10 grid place-items-center rounded-full bg-white/5">
+                <span class="block w-5 h-0.5 bg-white"></span>
+            </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden border-t border-white/5 bg-ink/95 backdrop-blur-xl">
+            <nav class="px-6 py-4 flex flex-col gap-3 text-sm">
+                <a href="{{ url_for('home') }}">Главная</a>
+                <a href="{{ url_for('courses') }}">Программы</a>
+                <a href="{{ url_for('about') }}">О клубе</a>
+                <a href="{{ url_for('contacts') }}">Контакты</a>
+                <a href="tel:+79129565511" class="mt-2 px-5 py-3 rounded-full bg-ember text-center font-semibold">Записаться</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="mt-32 border-t border-white/5 bg-ink/80">
+        <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10">
+            <div>
+                <div class="font-display font-black text-xl">SEVER<span class="text-ember">FITNESS</span></div>
+                <p class="mt-3 text-sm text-white/50">Премиальный фитнес-клуб в Усинске. Сила в каждом дне.</p>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-3 text-white/80">Клуб</h4>
+                <ul class="space-y-2 text-sm text-white/50">
+                    <li><a href="{{ url_for('about') }}" class="hover:text-ember transition">О нас</a></li>
+                    <li><a href="{{ url_for('courses') }}" class="hover:text-ember transition">Программы</a></li>
+                    <li><a href="{{ url_for('home') }}#trainers" class="hover:text-ember transition">Тренеры</a></li>
+                    <li><a href="{{ url_for('home') }}#price" class="hover:text-ember transition">Прайс</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-3 text-white/80">Контакты</h4>
+                <ul class="space-y-2 text-sm text-white/50">
+                    <li><a href="tel:+79129565511" class="hover:text-ember transition">+7 (912) 956-55-11</a></li>
+                    <li>г. Усинск</li>
+                    <li>Ежедневно 7:00 — 23:00</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-3 text-white/80">Готовы начать?</h4>
+                <a href="tel:+79129565511" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-ember text-white text-sm font-semibold hover:bg-ember/90 transition">Записаться на пробное</a>
+            </div>
+        </div>
+        <div class="border-t border-white/5 py-6 text-center text-xs text-white/40">
+            © 2026 SEVER FITNESS · Усинск. Все права защищены.
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('burger')?.addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+        document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-zoom').forEach(el => obs.observe(el));
+    </script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

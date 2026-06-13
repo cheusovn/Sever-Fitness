@@ -1,76 +1,69 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>О нас — SEVER FITNESS</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <div class="logo">SEVER<span>FITNESS</span></div>
-        <nav>
-            <a href="{{ url_for('home') }}">Главная</a>
-            <a href="{{ url_for('home') }}#promo">Акции</a>
-            <a href="{{ url_for('home') }}#trainers">Тренеры</a>
-            <a href="{{ url_for('home') }}#gallery">Клуб</a>
-            <a href="{{ url_for('home') }}#price">Прайс</a>
-            <a href="{{ url_for('about') }}">О нас</a>
-        </nav>
-    </header>
+{% extends "base.html" %}
+{% block title %}О клубе — SEVER FITNESS{% endblock %}
 
-    <section class="hero hero-small">
-        <div class="hero-glow"></div>
-        <h1 class="reveal">О НАС</h1>
-        <p class="reveal delay-1">SEVER FITNESS — больше, чем спортзал</p>
-    </section>
+{% block content %}
+<section class="page-hero">
+    <div class="breadcrumb"><a href="{{ url_for('home') }}" class="hover:text-ember">Главная</a> / <span>О клубе</span></div>
+    <span class="section-eyebrow reveal">О нас</span>
+    <h1 class="mt-4 reveal delay-1">БОЛЬШЕ,<br><span class="text-ember">ЧЕМ СПОРТЗАЛ</span></h1>
+    <p class="section-sub mx-auto reveal delay-2 mt-6">Премиальное пространство для тренировок в Усинске. Сила, дисциплина, результат — наша философия.</p>
+</section>
 
-    <section class="about-page">
-        <div class="about-grid">
-            <div class="about-text reveal-left">
-                <h2>Наша философия</h2>
-                <p>SEVER FITNESS — это премиальное пространство для тренировок в Усинске. Мы создали место, где современное оборудование сочетается с атмосферой и профессиональной командой.</p>
-                <p>Здесь каждый найдёт свой путь к идеальной форме — от новичка до профессионала.</p>
-            </div>
-            <div class="about-stats reveal-right">
-                <div class="stat"><b>5000+</b><span>довольных клиентов</span></div>
-                <div class="stat"><b>4</b><span>опытных тренера</span></div>
-                <div class="stat"><b>10</b><span>лет на рынке</span></div>
-                <div class="stat"><b>24/7</b><span>доступ в клуб</span></div>
+<section class="section">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal-left">
+            <div class="hero-img-wrap aspect-square">
+                <img src="{{ url_for('static', filename='gym2.jpg') }}" alt="SEVER FITNESS">
             </div>
         </div>
-
-        <div class="values">
-            <div class="value-card reveal-zoom">
-                <div class="value-icon">💪</div>
-                <h3>Результат</h3>
-                <p>Индивидуальный подход к каждому клиенту и реальные результаты.</p>
-            </div>
-            <div class="value-card reveal-zoom delay-1">
-                <div class="value-icon">🏆</div>
-                <h3>Качество</h3>
-                <p>Премиальное оборудование от ведущих мировых брендов.</p>
-            </div>
-            <div class="value-card reveal-zoom delay-2">
-                <div class="value-icon">🤝</div>
-                <h3>Команда</h3>
-                <p>Профессиональные тренеры с большим спортивным стажем.</p>
+        <div class="reveal-right">
+            <span class="section-eyebrow">Философия</span>
+            <h2 class="section-title mt-4">Каждая тренировка — путь к лучшей версии себя</h2>
+            <p class="mt-6 text-white/60 leading-relaxed">
+                SEVER FITNESS создан для тех, кто ценит профессиональный подход. Мы объединили современное оборудование от ведущих брендов, экспертную команду и атмосферу, в которой хочется тренироваться.
+            </p>
+            <p class="mt-4 text-white/60 leading-relaxed">
+                Здесь каждый найдёт свой путь — от первой тренировки до спортивных результатов.
+            </p>
+            <div class="mt-8 grid grid-cols-2 gap-6">
+                <div><div class="stat-num">5000+</div><div class="text-xs text-white/50 mt-2 uppercase tracking-wider">Довольных клиентов</div></div>
+                <div><div class="stat-num">4</div><div class="text-xs text-white/50 mt-2 uppercase tracking-wider">Опытных тренера</div></div>
+                <div><div class="stat-num">10</div><div class="text-xs text-white/50 mt-2 uppercase tracking-wider">Лет на рынке</div></div>
+                <div><div class="stat-num">24/7</div><div class="text-xs text-white/50 mt-2 uppercase tracking-wider">Доступ в клуб</div></div>
             </div>
         </div>
+    </div>
+</section>
 
-        <div style="text-align:center; margin-top:60px;">
-            <a href="tel:+79129565511" class="btn reveal">📞 Связаться с нами</a>
+<section class="section">
+    <div class="text-center mb-12">
+        <span class="section-eyebrow reveal">Принципы</span>
+        <h2 class="section-title reveal delay-1">НАШИ ЦЕННОСТИ</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="glass-card p-8 reveal-zoom">
+            <div class="w-14 h-14 rounded-2xl bg-ember/15 grid place-items-center text-2xl">💪</div>
+            <h3 class="font-display font-black text-2xl mt-6">Результат</h3>
+            <p class="text-white/60 mt-3 leading-relaxed">Индивидуальный подход к каждому клиенту и реальные, измеримые результаты.</p>
         </div>
-    </section>
+        <div class="glass-card p-8 reveal-zoom delay-1">
+            <div class="w-14 h-14 rounded-2xl bg-ember/15 grid place-items-center text-2xl">🏆</div>
+            <h3 class="font-display font-black text-2xl mt-6">Качество</h3>
+            <p class="text-white/60 mt-3 leading-relaxed">Премиальное оборудование от мировых брендов и продуманное пространство.</p>
+        </div>
+        <div class="glass-card p-8 reveal-zoom delay-2">
+            <div class="w-14 h-14 rounded-2xl bg-ember/15 grid place-items-center text-2xl">🤝</div>
+            <h3 class="font-display font-black text-2xl mt-6">Команда</h3>
+            <p class="text-white/60 mt-3 leading-relaxed">Мастера спорта и опытные инструкторы, которым важен ваш прогресс.</p>
+        </div>
+    </div>
+</section>
 
-    <footer><p>SEVER FITNESS · Усинск</p></footer>
-
-    <script>
-        const obs = new IntersectionObserver((es)=>{
-            es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('active'); });
-        },{ threshold:0.12, rootMargin:'0px 0px -60px 0px' });
-        document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-zoom,h2').forEach(el=>obs.observe(el));
-    </script>
-</body>
-</html>
+<section class="section">
+    <div class="glass-card p-10 md:p-16 text-center reveal-zoom">
+        <h2 class="section-title">Приходите познакомиться</h2>
+        <p class="section-sub mx-auto mt-4">Проведём экскурсию по клубу, расскажем про программы и подберём оптимальный абонемент.</p>
+        <a href="tel:+79129565511" class="btn-primary mt-8">📞 Связаться с нами</a>
+    </div>
+</section>
+{% endblock %}

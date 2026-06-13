@@ -1,39 +1,49 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Контакты — Школа ИИ</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <nav>
-        <a href="/">Главная</a>
-        <a href="/courses">Курсы</a>
-        <a href="/contacts">Контакты</a>
-    </nav>
+{% extends "base.html" %}
+{% block title %}Контакты — SEVER FITNESS{% endblock %}
 
-    <div class="hero">
-        <h1>✉️ Контакты</h1>
-        <p>Свяжитесь с нами любым удобным способом</p>
+{% block content %}
+<section class="page-hero">
+    <div class="breadcrumb"><a href="{{ url_for('home') }}" class="hover:text-ember">Главная</a> / <span>Контакты</span></div>
+    <span class="section-eyebrow reveal">Связаться</span>
+    <h1 class="mt-4 reveal delay-1">КОНТАКТЫ<br><span class="text-ember">КЛУБА</span></h1>
+    <p class="section-sub mx-auto reveal delay-2 mt-6">Звоните, пишите, приходите — будем рады знакомству.</p>
+</section>
+
+<section class="section">
+    <div class="grid md:grid-cols-3 gap-6">
+        <a href="tel:+79129565511" class="glass-card p-8 block reveal-zoom group">
+            <div class="w-14 h-14 rounded-2xl bg-ember/15 grid place-items-center text-2xl">📞</div>
+            <h3 class="font-display font-black text-2xl mt-6">Телефон</h3>
+            <p class="text-white/60 mt-3">Звоните — ответим и подберём удобное время</p>
+            <p class="mt-6 text-xl font-semibold text-ember group-hover:underline">+7 (912) 956-55-11</p>
+        </a>
+
+        <div class="glass-card p-8 reveal-zoom delay-1">
+            <div class="w-14 h-14 rounded-2xl bg-ember/15 grid place-items-center text-2xl">📍</div>
+            <h3 class="font-display font-black text-2xl mt-6">Адрес</h3>
+            <p class="text-white/60 mt-3">Найдёте нас в центре города</p>
+            <p class="mt-6 text-lg font-semibold">г. Усинск</p>
+        </div>
+
+        <div class="glass-card p-8 reveal-zoom delay-2">
+            <div class="w-14 h-14 rounded-2xl bg-ember/15 grid place-items-center text-2xl">🕐</div>
+            <h3 class="font-display font-black text-2xl mt-6">Режим работы</h3>
+            <p class="text-white/60 mt-3">Тренируйтесь в удобное время</p>
+            <p class="mt-6 text-lg font-semibold">Ежедневно<br>7:00 — 23:00</p>
+        </div>
     </div>
+</section>
 
-    <div class="container">
-        <div class="card">
-            <h2>📧 Email</h2>
-            <p>info@truman-ai.ru</p>
-        </div>
-        <div class="card">
-            <h2>📞 Телефон</h2>
-            <p>+7 (900) 123-45-67</p>
-        </div>
-        <div class="card">
-            <h2>📍 Адрес</h2>
-            <p>г. Москва, ул. Нейронная, д. 1</p>
+<section class="section">
+    <div class="glass-card relative overflow-hidden p-10 md:p-16 text-center reveal-zoom">
+        <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-ember/20 blur-3xl"></div>
+        <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-purple-500/10 blur-3xl"></div>
+        <div class="relative">
+            <span class="section-eyebrow">Пробная тренировка</span>
+            <h2 class="section-title mt-4">Первая тренировка — бесплатно</h2>
+            <p class="section-sub mx-auto mt-4">Оставьте заявку по телефону — расскажем о клубе, проведём экскурсию и подберём программу.</p>
+            <a href="tel:+79129565511" class="btn-primary mt-8">📞 Записаться</a>
         </div>
     </div>
-
-    <footer>
-        © 2025 Школа ИИ Николая Трумана
-    </footer>
-</body>
-</html>
+</section>
+{% endblock %}
