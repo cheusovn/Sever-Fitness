@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас — SEVER FITNESS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">SEVER<span>FITNESS</span></div>
+        <nav>
+            <a href="{{ url_for('home') }}">Главная</a>
+            <a href="{{ url_for('home') }}#promo">Акции</a>
+            <a href="{{ url_for('home') }}#trainers">Тренеры</a>
+            <a href="{{ url_for('home') }}#gallery">Клуб</a>
+            <a href="{{ url_for('home') }}#price">Прайс</a>
+            <a href="{{ url_for('about') }}">О нас</a>
+        </nav>
+    </header>
+
+    <section class="hero hero-small">
+        <div class="hero-glow"></div>
+        <h1 class="reveal">О НАС</h1>
+        <p class="reveal delay-1">SEVER FITNESS — больше, чем спортзал</p>
+    </section>
+
+    <section class="about-page">
+        <div class="about-grid">
+            <div class="about-text reveal-left">
+                <h2>Наша философия</h2>
+                <p>SEVER FITNESS — это премиальное пространство для тренировок в Усинске. Мы создали место, где современное оборудование сочетается с атмосферой и профессиональной командой.</p>
+                <p>Здесь каждый найдёт свой путь к идеальной форме — от новичка до профессионала.</p>
+            </div>
+            <div class="about-stats reveal-right">
+                <div class="stat"><b>5000+</b><span>довольных клиентов</span></div>
+                <div class="stat"><b>4</b><span>опытных тренера</span></div>
+                <div class="stat"><b>10</b><span>лет на рынке</span></div>
+                <div class="stat"><b>24/7</b><span>доступ в клуб</span></div>
+            </div>
+        </div>
+
+        <div class="values">
+            <div class="value-card reveal-zoom">
+                <div class="value-icon">💪</div>
+                <h3>Результат</h3>
+                <p>Индивидуальный подход к каждому клиенту и реальные результаты.</p>
+            </div>
+            <div class="value-card reveal-zoom delay-1">
+                <div class="value-icon">🏆</div>
+                <h3>Качество</h3>
+                <p>Премиальное оборудование от ведущих мировых брендов.</p>
+            </div>
+            <div class="value-card reveal-zoom delay-2">
+                <div class="value-icon">🤝</div>
+                <h3>Команда</h3>
+                <p>Профессиональные тренеры с большим спортивным стажем.</p>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top:60px;">
+            <a href="tel:+79129565511" class="btn reveal">📞 Связаться с нами</a>
+        </div>
+    </section>
+
+    <footer><p>SEVER FITNESS · Усинск</p></footer>
+
+    <script>
+        const obs = new IntersectionObserver((es)=>{
+            es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('active'); });
+        },{ threshold:0.12, rootMargin:'0px 0px -60px 0px' });
+        document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-zoom,h2').forEach(el=>obs.observe(el));
+    </script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEVER FITNESS — Усинск</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 🌟 ГЛОБАЛЬНЫЙ АНИМИРОВАННЫЙ ФОН (свечение + частицы) -->
+    <div class="global-bg">
+        <div class="glow-orb orb1"></div>
+        <div class="glow-orb orb2"></div>
+        <div class="glow-orb orb3"></div>
+        <div class="global-particles">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <!-- МЕНЮ -->
+    <header>
+        <div class="logo">SEVER<span>FITNESS</span></div>
+        <nav>
+            <a href="{{ url_for('home') }}">Главная</a>
+            <a href="{{ url_for('home') }}#promo">Акции</a>
+            <a href="{{ url_for('home') }}#trainers">Тренеры</a>
+            <a href="{{ url_for('home') }}#gallery">Клуб</a>
+            <a href="{{ url_for('home') }}#price">Прайс</a>
+            <a href="{{ url_for('about') }}">О нас</a>
+        </nav>
+    </header>
+
+    <!-- ГЛАВНЫЙ БЛОК (HERO) с фоном gym1.jpg -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-zoom" style="background-image: url('{{ url_for('static', filename='gym1.jpg') }}');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-glow"></div>
+
+        <div class="hero-particles">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <h1 class="hero-title">
+            <span class="word">SEVER</span>
+            <span class="word">FITNESS</span>
+        </h1>
+        <p class="reveal delay-1">Твой путь к идеальной форме начинается здесь</p>
+        <a href="#price" class="btn reveal delay-2">Смотреть цены</a>
+    </section>
+
+   <!-- АКЦИИ (СОВРЕМЕННЫЙ СЛАЙДЕР) -->
+    <section class="promo" id="promo">
+        <h2>АКЦИИ</h2>
+        <p class="promo-subtitle reveal delay-1">Успей воспользоваться выгодным предложением!</p>
+
+        <div class="slider reveal-zoom">
+            <div class="slides-track" id="track">
+                <div class="slide">
+                    <img src="{{ url_for('static', filename='promo1.jpg') }}" alt="Акция 1">
+                </div>
+                <div class="slide">
+                    <img src="{{ url_for('static', filename='promo2.jpg') }}" alt="Акция 2">
+                </div>
+            </div>
+            <button class="slider-arrow prev" onclick="changeSlide(-1)">‹</button>
+            <button class="slider-arrow next" onclick="changeSlide(1)">›</button>
+
+            <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top:40px;">
+            <a href="tel:+79129565511" class="btn reveal">📞 Получить акцию</a>
+        </div>
+    </section>
+
+    <!-- НАШИ ТРЕНЕРЫ -->
+    <section class="trainers" id="trainers">
+        <h2>НАШИ ТРЕНЕРЫ</h2>
+        <div class="trainers-grid">
+            <div class="trainer-card reveal-zoom">
+                <img src="{{ url_for('static', filename='trainer4.jpg') }}" alt="Иван" class="trainer-photo">
+                <h3>Иван</h3>
+                <p class="trainer-role">Персональный тренер</p>
+                <ul class="trainer-info">
+                    <li>🥇 Мастер спорта по пауэрлифтингу</li>
+                    <li>🏋️ Спортивный стаж 23 года</li>
+                    <li>⏱ Тренерский стаж 10 лет</li>
+                </ul>
+            </div>
+            <div class="trainer-card reveal-zoom delay-1">
+                <img src="{{ url_for('static', filename='trainer2.jpg') }}" alt="Инга" class="trainer-photo">
+                <h3>Инга</h3>
+                <p class="trainer-role">Персональный тренер</p>
+                <ul class="trainer-info">
+                    <li>🥗 Инструктор по фитнесу и нутрициологии</li>
+                    <li>⏱ Опыт 3 года</li>
+                </ul>
+            </div>
+            <div class="trainer-card reveal-zoom delay-2">
+                <img src="{{ url_for('static', filename='trainer3.jpg') }}" alt="Милена" class="trainer-photo">
+                <h3>Милена</h3>
+                <p class="trainer-role">Персональный тренер</p>
+                <ul class="trainer-info"><li>⏱ 5 лет опыта</li></ul>
+            </div>
+            <div class="trainer-card reveal-zoom delay-3">
+                <img src="{{ url_for('static', filename='trainer1.jpg') }}" alt="Регина" class="trainer-photo">
+                <h3>Регина</h3>
+                <p class="trainer-role">Тренер групповых и индивидуальных программ</p>
+                <ul class="trainer-info"><li>⏱ Опыт 5 лет</li></ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ФОТО КЛУБА -->
+    <section class="gallery" id="gallery">
+        <h2>ФОТО КЛУБА</h2>
+        <p class="gallery-subtitle reveal delay-1">Загляни внутрь SEVER FITNESS</p>
+        <div class="gallery-grid">
+            <div class="gallery-item big reveal-zoom">
+                <img src="{{ url_for('static', filename='gym1.jpg') }}" alt="Зал 1">
+                <span class="gallery-caption">Современный зал</span>
+            </div>
+            <div class="gallery-item reveal-zoom delay-1">
+                <img src="{{ url_for('static', filename='gym2.jpg') }}" alt="Зал 2">
+                <span class="gallery-caption">Кардио-зона</span>
+            </div>
+            <div class="gallery-item reveal-zoom delay-2">
+                <img src="{{ url_for('static', filename='gym3.jpg') }}" alt="Зал 3">
+                <span class="gallery-caption">Функциональная зона</span>
+            </div>
+            <div class="gallery-item wide reveal-zoom delay-3">
+                <img src="{{ url_for('static', filename='gym4.jpg') }}" alt="Зал 4">
+                <span class="gallery-caption">Тренажёрный зал</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПРАЙС -->
+    <section class="price" id="price">
+        <h2>ПРАЙС</h2>
+        <p class="price-subtitle reveal delay-1">Абонементы и посещения</p>
+        <div class="price-grid">
+
+            <div class="price-card reveal-left">
+                <div class="price-card-head">БЕЗЛИМИТ</div>
+                <div class="price-rows">
+                    <div class="price-row"><span class="price-name">1 месяц</span><span class="price-value">5 000 ₽</span></div>
+                    <div class="price-row"><span class="price-name">3 месяца</span><span class="price-value">12 000 ₽</span></div>
+                    <div class="price-row"><span class="price-name">6 месяцев</span><span class="price-value">18 000 ₽</span></div>
+                    <div class="price-row"><span class="price-name">12 месяцев</span><span class="price-value">24 000 ₽</span></div>
+                    <div class="price-row"><span class="price-name">Смена владельца</span><span class="price-value">1 000 ₽</span></div>
+                </div>
+                <ul class="price-notes">
+                    <li>Заморозка абонемента на 6 и 12 месяцев — единоразово</li>
+                    <li>Максимальный срок заморозки — не более 30 дней</li>
+                </ul>
+            </div>
+
+            <div class="price-card reveal-right">
+                <div class="price-card-head">НА ПОСЕЩЕНИЯ</div>
+                <div class="price-rows">
+                    <div class="price-row"><span class="price-name">Разовое</span><span class="price-value">600 ₽</span></div>
+                    <div class="price-row"><span class="price-name">Тариф «Дуэт»</span><span class="price-value">1 000 ₽</span></div>
+                    <div class="price-row"><span class="price-name">8 посещений</span><span class="price-value">3 200 ₽</span></div>
+                    <div class="price-row"><span class="price-name">12 посещений</span><span class="price-value">4 200 ₽</span></div>
+                </div>
+                <ul class="price-notes">
+                    <li>Абонементы на 8 и 12 посещений действуют 1 месяц с момента активации</li>
+                    <li>По истечении 30 дней активация происходит автоматически</li>
+                </ul>
+            </div>
+
+        </div>
+        <div style="text-align:center; margin-top:50px;">
+            <a href="tel:+79129565511" class="btn reveal">📞 Записаться</a>
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ -->
+    <footer>
+        <p>SEVER FITNESS · Усинск </p>
+    </footer>
+
+   <!-- СКРИПТ СЛАЙДЕРА -->
+    <script>
+        let current = 0;
+        const track = document.getElementById('track');
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const total = slides.length;
+
+        function showSlide(n) {
+            current = (n + total) % total;
+            track.style.transform = `translateX(-${current * 100}%)`;
+            slides.forEach(s => s.classList.remove('is-active'));
+            dots.forEach(d => d.classList.remove('active'));
+            slides[current].classList.add('is-active');
+            dots[current].classList.add('active');
+        }
+        function changeSlide(dir) { showSlide(current + dir); resetTimer(); }
+        function goToSlide(n) { showSlide(n); resetTimer(); }
+        let timer = setInterval(() => showSlide(current + 1), 5000);
+        function resetTimer() {
+            clearInterval(timer);
+            timer = setInterval(() => showSlide(current + 1), 5000);
+        }
+        showSlide(0);
+    </script>
+
+    <!-- 🔥 АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ -->
+    <script>
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+        document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-zoom,h2').forEach(el => obs.observe(el));
+    </script>
+</body>
+</html>
