@@ -1,0 +1,10 @@
+meta:
+  environment: python
+  toolVersion: "3.12"
+
+build:
+  requirementsPath: requirements.txt
+
+run:
+  persistenceMount: /data
+  command: gunicorn --bind 0.0.0.0:8080 app:app
