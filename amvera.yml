@@ -7,5 +7,5 @@ build:
 
 run:
   persistenceMount: /data
-  scriptName: app.py
+  command: gunicorn app:app --bind 0.0.0.0:5000
   containerPort: 5000
