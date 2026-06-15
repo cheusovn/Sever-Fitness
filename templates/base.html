@@ -27,8 +27,6 @@
     <div class="grain-overlay" aria-hidden="true"></div>
 
     <div class="scroll-progress" id="scrollProgress"></div>
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-dot" id="cursorDot"></div>
 
     <div class="global-bg fixed inset-0 -z-10 pointer-events-none">
         <div class="glow-orb orb1"></div>
@@ -125,8 +123,9 @@
                 <h4 class="font-semibold mb-3 text-white/80">Контакты</h4>
                 <ul class="space-y-2 text-sm text-white/50">
                     <li><a href="tel:+79129565511" class="hover:text-ember transition">+7 (912) 956-55-11</a></li>
-                    <li>г. Усинск</li>
-                    <li>Ежедневно 7:00 — 23:00</li>
+                    <li>г. Усинск, ул. Приполярная, 7/5</li>
+                    <li>Пн–Пт 08:00–23:00</li>
+                    <li>Сб–Вс 09:00–22:00</li>
                 </ul>
             </div>
             <div>
@@ -151,16 +150,12 @@
             if (window.scrollY > 400) cta.classList.add('visible'); else cta.classList.remove('visible');
         }, {passive:true});
 
-        // Custom cursor (desktop only)
+        // Hover glow ring on interactive elements (desktop only)
         (function(){
-            const cur = document.getElementById('cursor'), dot = document.getElementById('cursorDot');
-            if (!cur || window.matchMedia('(pointer:coarse)').matches) return;
-            let mx=0,my=0,cx=0,cy=0;
-            document.addEventListener('mousemove', e=>{ mx=e.clientX; my=e.clientY; dot.style.transform=`translate(${mx}px,${my}px) translate(-50%,-50%)`; });
-            (function loop(){ cx+=(mx-cx)*.1; cy+=(my-cy)*.1; cur.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`; requestAnimationFrame(loop); })();
-            document.querySelectorAll('a,button,.gallery-item,.trainer-card,.review-card,.price-card').forEach(el=>{
-                el.addEventListener('mouseenter',()=>cur.classList.add('hover'));
-                el.addEventListener('mouseleave',()=>cur.classList.remove('hover'));
+            if(window.matchMedia('(pointer:coarse)').matches) return;
+            document.querySelectorAll('.glass-card,.price-card,.trainer-card').forEach(el=>{
+                el.addEventListener('mouseenter',()=>{ el.style.setProperty('--ring','1'); });
+                el.addEventListener('mouseleave',()=>{ el.style.removeProperty('--ring'); });
             });
         })();
 
