@@ -23,6 +23,9 @@
 </head>
 <body class="font-sans bg-ink text-white antialiased overflow-x-hidden">
 
+    <!-- Film grain overlay for premium texture -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
     <div class="scroll-progress" id="scrollProgress"></div>
     <div class="cursor" id="cursor"></div>
     <div class="cursor-dot" id="cursorDot"></div>
@@ -39,8 +42,8 @@
     <div class="mobile-overlay" id="mobileOverlay">
         <a href="{{ url_for('home') }}" class="mob-link" onclick="closeMobile()">Главная</a>
         <a href="{{ url_for('courses') }}" class="mob-link" onclick="closeMobile()">Программы</a>
-        <a href="{{ url_for('home') }}#schedule" class="mob-link" onclick="closeMobile()">Расписание</a>
         <a href="{{ url_for('about') }}" class="mob-link" onclick="closeMobile()">О клубе</a>
+        <a href="{{ url_for('home') }}#price" class="mob-link" onclick="closeMobile()">Прайс</a>
         <a href="{{ url_for('contacts') }}" class="mob-link" onclick="closeMobile()">Контакты</a>
         <a href="tel:+79129565511" class="mob-cta" onclick="closeMobile()">📞 +7 (912) 956-55-11</a>
     </div>
@@ -54,7 +57,6 @@
                 <a href="{{ url_for('home') }}" class="nav-link">Главная</a>
                 <a href="{{ url_for('home') }}#promo" class="nav-link">Акции</a>
                 <a href="{{ url_for('courses') }}" class="nav-link">Программы</a>
-                <a href="{{ url_for('home') }}#schedule" class="nav-link">Расписание</a>
                 <a href="{{ url_for('home') }}#price" class="nav-link">Прайс</a>
                 <a href="{{ url_for('about') }}" class="nav-link">О клубе</a>
                 <a href="{{ url_for('contacts') }}" class="nav-link">Контакты</a>
@@ -105,9 +107,6 @@
                     <a href="https://vk.com/sever.fitness" target="_blank" rel="noopener" class="social-btn" aria-label="ВКонтакте">
                         <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M12.5 16.5h1.2c.4 0 .5-.2.5-.5v-1.5c0-.3.1-.4.3-.4.2 0 .4.1.7.4.5.5 1.3 1.5 1.6 1.7.3.3.5.3.8.3h2.3c.5 0 .8-.2.6-.6-.1-.4-1.6-2-2.1-2.7-.4-.6-.3-.8 0-1.2.4-.5 2-2.4 2.2-3.1.1-.3 0-.5-.4-.5h-2.3c-.4 0-.5.1-.7.4-.4.8-1.4 2.2-1.8 2.7-.2.2-.4.1-.4-.2v-2.4c0-.4-.1-.5-.5-.5h-2.5c-.2 0-.4.1-.4.3 0 .3.4.4.5 1.2v3.3c0 .4-.1.5-.3.5-.4 0-1.1-1.4-1.7-3.5-.1-.4-.3-.5-.7-.5H6.5c-.4 0-.5.2-.5.4 0 .3.4 2.3 2.2 4.9 1.3 1.8 3 2.6 4.3 2.6z"/></svg>
                     </a>
-                    <a href="https://instagram.com/sever.fitness" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-                    </a>
                     <a href="tel:+79129565511" class="social-btn" aria-label="Позвонить">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
                     </a>
@@ -119,7 +118,6 @@
                     <li><a href="{{ url_for('about') }}" class="hover:text-ember transition">О нас</a></li>
                     <li><a href="{{ url_for('courses') }}" class="hover:text-ember transition">Программы</a></li>
                     <li><a href="{{ url_for('home') }}#trainers" class="hover:text-ember transition">Тренеры</a></li>
-                    <li><a href="{{ url_for('home') }}#schedule" class="hover:text-ember transition">Расписание</a></li>
                     <li><a href="{{ url_for('home') }}#price" class="hover:text-ember transition">Прайс</a></li>
                 </ul>
             </div>
@@ -135,7 +133,6 @@
                 <h4 class="font-semibold mb-3 text-white/80">Соцсети</h4>
                 <ul class="space-y-2 text-sm text-white/50">
                     <li><a href="https://vk.com/sever.fitness" target="_blank" rel="noopener" class="hover:text-ember transition">vk.com/sever.fitness</a></li>
-                    <li><a href="https://instagram.com/sever.fitness" target="_blank" rel="noopener" class="hover:text-ember transition">@sever.fitness</a></li>
                 </ul>
                 <a href="tel:+79129565511" class="mt-4 inline-flex items-center gap-2 px-5 py-3 rounded-full bg-ember text-black text-sm font-bold hover:brightness-110 transition">Записаться</a>
             </div>
@@ -146,22 +143,22 @@
     </footer>
 
     <script>
-        // Scroll progress
+        // Scroll progress + floating CTA
         window.addEventListener('scroll', () => {
             const p = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
             document.getElementById('scrollProgress').style.width = p + '%';
             const cta = document.getElementById('floatingCta');
-            if (window.scrollY > 500) cta.classList.add('visible'); else cta.classList.remove('visible');
-        });
+            if (window.scrollY > 400) cta.classList.add('visible'); else cta.classList.remove('visible');
+        }, {passive:true});
 
-        // Custom cursor
+        // Custom cursor (desktop only)
         (function(){
             const cur = document.getElementById('cursor'), dot = document.getElementById('cursorDot');
             if (!cur || window.matchMedia('(pointer:coarse)').matches) return;
             let mx=0,my=0,cx=0,cy=0;
-            document.addEventListener('mousemove', e=>{ mx=e.clientX; my=e.clientY; dot.style.transform=`translate(${mx}px,${my}px)`; });
-            (function loop(){ cx+=(mx-cx)*.12; cy+=(my-cy)*.12; cur.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`; requestAnimationFrame(loop); })();
-            document.querySelectorAll('a,button,.gallery-item,.trainer-card,.review-card').forEach(el=>{
+            document.addEventListener('mousemove', e=>{ mx=e.clientX; my=e.clientY; dot.style.transform=`translate(${mx}px,${my}px) translate(-50%,-50%)`; });
+            (function loop(){ cx+=(mx-cx)*.1; cy+=(my-cy)*.1; cur.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`; requestAnimationFrame(loop); })();
+            document.querySelectorAll('a,button,.gallery-item,.trainer-card,.review-card,.price-card').forEach(el=>{
                 el.addEventListener('mouseenter',()=>cur.classList.add('hover'));
                 el.addEventListener('mouseleave',()=>cur.classList.remove('hover'));
             });
@@ -173,10 +170,10 @@
         burger?.addEventListener('click',()=>{
             const o=overlay.classList.toggle('open'); burger.classList.toggle('open',o); document.body.style.overflow=o?'hidden':'';
         });
-        document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMobile(); });
+        document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeMobile(); } });
 
-        // Reveal
-        const obs=new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('active'); }),{threshold:.12,rootMargin:'0px 0px -60px 0px'});
+        // Reveal on scroll
+        const obs=new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('active'); }),{threshold:.1,rootMargin:'0px 0px -50px 0px'});
         document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-zoom').forEach(el=>obs.observe(el));
 
         // Counter animation
@@ -190,7 +187,7 @@
                 (function tick(now){
                     const t=Math.min((now-start)/dur,1), ease=1-Math.pow(1-t,3);
                     e.target.textContent=Math.round(num*ease).toLocaleString('ru')+suffix;
-                    if(t<1) requestAnimationFrame(tick); else e.target.textContent=raw;
+                    if(t<1) requestAnimationFrame(tick); else e.target.textContent=num.toLocaleString('ru')+suffix;
                 })(start);
             });
         },{threshold:.5});
@@ -209,19 +206,29 @@
         // Fireflies
         (function(){
             const wrap=document.getElementById('fireflies'); if(!wrap) return;
-            const n=window.innerWidth<768?14:32;
+            const n=window.innerWidth<768?10:28;
             for(let i=0;i<n;i++){
                 const f=document.createElement('span'); f.className='firefly';
-                const size=2+Math.random()*4, dur=10+Math.random()*16, delay=-Math.random()*dur, dx=(Math.random()-.5)*200;
-                f.style.cssText=`left:${Math.random()*100}%;width:${size}px;height:${size}px;animation-duration:${dur}s,${2+Math.random()*3}s;animation-delay:${delay}s,${-Math.random()*3}s;filter:brightness(${.5+Math.random()*.5});`;
+                const size=2+Math.random()*3.5, dur=10+Math.random()*16, delay=-Math.random()*dur, dx=(Math.random()-.5)*200;
+                f.style.cssText=`left:${Math.random()*100}%;width:${size}px;height:${size}px;animation-duration:${dur}s,${2+Math.random()*3}s;animation-delay:${delay}s,${-Math.random()*3}s;`;
                 f.style.setProperty('--dx',dx+'px'); wrap.appendChild(f);
             }
         })();
 
-        // Lenis smooth scroll
+        // Lenis smooth scroll — disabled on mobile/touch to prevent freeze
         (function(){
+            const isMobile = window.matchMedia('(max-width:768px),(pointer:coarse)').matches;
             const s=document.createElement('script'); s.src='https://unpkg.com/lenis@1.1.13/dist/lenis.min.js';
-            s.onload=()=>{ const l=new Lenis({duration:1.2,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true}); (function r(t){l.raf(t);requestAnimationFrame(r);})(0); };
+            s.onload=()=>{
+                const l=new Lenis({
+                    duration: 1.2,
+                    easing: t=>Math.min(1,1.001-Math.pow(2,-10*t)),
+                    smoothWheel: !isMobile,
+                    smoothTouch: false,
+                    lerp: isMobile ? 1 : 0.1,
+                });
+                (function r(t){l.raf(t);requestAnimationFrame(r);})(0);
+            };
             document.head.appendChild(s);
         })();
     </script>

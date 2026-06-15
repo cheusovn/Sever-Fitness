@@ -4,16 +4,10 @@
 
 <!-- FULLSCREEN HERO -->
 <section class="hero-fullscreen">
-
-  <!-- Parallax background photo -->
   <div class="hero-bg" id="heroBg">
     <img src="{{ url_for('static', filename='gym1.jpg') }}" alt="SEVER FITNESS зал" loading="eager">
   </div>
-
-  <!-- Dark overlay -->
   <div class="hero-overlay"></div>
-
-  <!-- Aurora Borealis effect -->
   <div class="hero-aurora" aria-hidden="true">
     <div class="aurora-band ab1"></div>
     <div class="aurora-band ab2"></div>
@@ -21,8 +15,6 @@
     <div class="aurora-band ab4"></div>
     <div class="aurora-curtain"></div>
   </div>
-
-  <!-- Hero content -->
   <div class="hero-content">
     <div class="section-eyebrow reveal" style="margin-bottom:1.5rem">★ ПРЕМИАЛЬНЫЙ КЛУБ · УСИНСК</div>
     <h1 class="hero-display reveal delay-1">
@@ -43,7 +35,7 @@
         <div class="hero-stat-label">Клиентов</div>
       </div>
       <div>
-        <div class="hero-stat-val" data-counter data-target="10" data-suffix="">10</div>
+        <div class="hero-stat-val" data-counter data-target="10">10</div>
         <div class="hero-stat-label">Лет в городе</div>
       </div>
       <div>
@@ -51,18 +43,15 @@
         <div class="hero-stat-label">Доступ</div>
       </div>
       <div>
-        <div class="hero-stat-val" data-counter data-target="9" data-suffix="">9</div>
+        <div class="hero-stat-val" data-counter data-target="9">9</div>
         <div class="hero-stat-label">Тренеров</div>
       </div>
     </div>
   </div>
-
-  <!-- Scroll hint -->
   <div class="scroll-hint" aria-hidden="true">
     <div class="scroll-hint-line"></div>
     <span>scroll</span>
   </div>
-
 </section>
 
 <!-- MARQUEE -->
@@ -103,6 +92,8 @@
     </div>
 </section>
 
+<div class="neon-divider"></div>
+
 <!-- TRAINERS -->
 <section class="section" id="trainers">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
@@ -116,6 +107,7 @@
 
         <div class="trainer-card reveal-zoom">
             <img src="{{ url_for('static', filename='trainer4.jpg') }}" alt="Иван">
+            <div class="trainer-card-glow"></div>
             <div class="trainer-info-overlay">
                 <div class="trainer-spec">Пауэрлифтинг</div>
                 <div class="trainer-name">Иван</div>
@@ -125,6 +117,7 @@
 
         <div class="trainer-card reveal-zoom delay-1">
             <img src="{{ url_for('static', filename='trainer2.jpg') }}" alt="Инга">
+            <div class="trainer-card-glow"></div>
             <div class="trainer-info-overlay">
                 <div class="trainer-spec">Нутрициология</div>
                 <div class="trainer-name">Инга</div>
@@ -134,6 +127,7 @@
 
         <div class="trainer-card reveal-zoom delay-2">
             <img src="{{ url_for('static', filename='trainer3.jpg') }}" alt="Милена">
+            <div class="trainer-card-glow"></div>
             <div class="trainer-info-overlay">
                 <div class="trainer-spec">Персональный</div>
                 <div class="trainer-name">Милена</div>
@@ -143,6 +137,7 @@
 
         <div class="trainer-card reveal-zoom">
             <img src="{{ url_for('static', filename='trainer_kseniya.jpg') }}" alt="Ксения">
+            <div class="trainer-card-glow"></div>
             <div class="trainer-info-overlay">
                 <div class="trainer-spec">Хатха-йога</div>
                 <div class="trainer-name">Ксения</div>
@@ -151,7 +146,8 @@
         </div>
 
         <div class="trainer-card reveal-zoom delay-1">
-            <img src="{{ url_for('static', filename='trainer_yoga2.jpg') }}" alt="Хатха-йога">
+            <img src="{{ url_for('static', filename='trainer_yoga2.jpg') }}" alt="Йога">
+            <div class="trainer-card-glow"></div>
             <div class="trainer-info-overlay">
                 <div class="trainer-spec">Хатха-йога</div>
                 <div class="trainer-sub">Групповые занятия</div>
@@ -160,6 +156,7 @@
 
         <div class="trainer-card reveal-zoom delay-2">
             <img src="{{ url_for('static', filename='trainer_ekaterina.jpg') }}" alt="Екатерина">
+            <div class="trainer-card-glow"></div>
             <div class="trainer-info-overlay">
                 <div class="trainer-spec">Стретчинг</div>
                 <div class="trainer-name">Екатерина</div>
@@ -169,6 +166,7 @@
 
         <div class="trainer-card reveal-zoom">
             <img src="{{ url_for('static', filename='jumping1.jpg') }}" alt="Джампинг">
+            <div class="trainer-card-glow"></div>
             <div class="trainer-info-overlay">
                 <div class="trainer-spec">Джампинг</div>
                 <div class="trainer-sub">Прыжки на батутах · кардио</div>
@@ -177,6 +175,7 @@
 
         <div class="trainer-card reveal-zoom delay-1">
             <img src="{{ url_for('static', filename='jumping2.jpg') }}" alt="Джампинг">
+            <div class="trainer-card-glow"></div>
             <div class="trainer-info-overlay">
                 <div class="trainer-spec">Джампинг</div>
                 <div class="trainer-sub">Прыжки на батутах · кардио</div>
@@ -185,6 +184,7 @@
 
         <div class="trainer-card reveal-zoom delay-2">
             <img src="{{ url_for('static', filename='jumping3.jpg') }}" alt="Джампинг">
+            <div class="trainer-card-glow"></div>
             <div class="trainer-info-overlay">
                 <div class="trainer-spec">Джампинг</div>
                 <div class="trainer-sub">Прыжки на батутах · кардио</div>
@@ -193,6 +193,8 @@
 
     </div>
 </section>
+
+<div class="neon-divider"></div>
 
 <!-- GALLERY -->
 <section class="section" id="gallery">
@@ -210,6 +212,8 @@
     <p class="text-center text-sm text-white/30 mt-6">Нажми на фото, чтобы открыть</p>
 </section>
 
+<div class="neon-divider"></div>
+
 <!-- PRICING -->
 <section class="section" id="price">
     <div class="text-center mb-12">
@@ -221,7 +225,7 @@
         <div class="price-card featured reveal-left">
             <div class="flex items-center justify-between mb-6">
                 <div><div class="text-xs text-ember font-bold uppercase tracking-widest">Популярное</div><h3 class="font-display font-black text-3xl mt-1">БЕЗЛИМИТ</h3></div>
-                <div class="w-12 h-12 rounded-full bg-ember/20 grid place-items-center text-ember text-xl">∞</div>
+                <div class="w-12 h-12 rounded-full bg-ember/20 grid place-items-center text-ember text-xl" style="box-shadow:0 0 20px rgba(230,255,0,.2)">∞</div>
             </div>
             <div class="price-row"><span class="name">1 месяц</span><span class="val">5 000 ₽</span></div>
             <div class="price-row"><span class="name">3 месяца</span><span class="val">12 000 ₽</span></div>
@@ -246,6 +250,8 @@
     </div>
 </section>
 
+<div class="neon-divider"></div>
+
 <!-- TESTIMONIALS -->
 <section class="section" id="reviews">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
@@ -253,34 +259,51 @@
             <span class="section-eyebrow reveal">Отзывы</span>
             <h2 class="section-title reveal delay-1">ЧТО ГОВОРЯТ<br>КЛИЕНТЫ</h2>
         </div>
-        <div class="rev-nav" id="revNav"></div>
+        <div class="flex items-center gap-4">
+            <div class="rev-nav" id="revNav"></div>
+        </div>
     </div>
-    <div class="reviews-outer reveal">
+    <div class="reviews-outer reveal" id="reviewsOuter">
         <div class="reviews-track" id="reviewsTrack">
             <div class="review-card">
-                <div class="rev-stars">★★★★★</div>
-                <p class="rev-text">«Тренировки с Иваном изменили меня за год — набрал 12 кг мышечной массы. Профессионал своего дела, всегда объясняет технику. Лучший зал в Усинске!»</p>
-                <div class="rev-author"><div class="rev-ava">АС</div><div><div class="rev-name">Александр С.</div><div class="rev-since">Клиент с 2023</div></div></div>
+                <div class="rev-inner">
+                    <div class="rev-stars">★★★★★</div>
+                    <p class="rev-text">«Тренировки с Иваном изменили меня за год — набрал 12 кг мышечной массы. Профессионал своего дела, всегда объясняет технику. Лучший зал в Усинске!»</p>
+                    <div class="rev-author"><div class="rev-ava">АС</div><div><div class="rev-name">Александр С.</div><div class="rev-since">Клиент с 2023</div></div></div>
+                    <div class="rev-progress"><div class="rev-progress-bar" id="rpb0"></div></div>
+                </div>
             </div>
             <div class="review-card">
-                <div class="rev-stars">★★★★★</div>
-                <p class="rev-text">«Хожу на джампинг уже полгода — это кайф! Сжигаю калории и заряжаюсь энергией на всю неделю. Инструкторы классные, атмосфера заряжает!»</p>
-                <div class="rev-author"><div class="rev-ava">МК</div><div><div class="rev-name">Мария К.</div><div class="rev-since">Клиент с 2024</div></div></div>
+                <div class="rev-inner">
+                    <div class="rev-stars">★★★★★</div>
+                    <p class="rev-text">«Хожу на джампинг уже полгода — это кайф! Сжигаю калории и заряжаюсь энергией на всю неделю. Инструкторы классные, атмосфера заряжает!»</p>
+                    <div class="rev-author"><div class="rev-ava">МК</div><div><div class="rev-name">Мария К.</div><div class="rev-since">Клиент с 2024</div></div></div>
+                    <div class="rev-progress"><div class="rev-progress-bar" id="rpb1"></div></div>
+                </div>
             </div>
             <div class="review-card">
-                <div class="rev-stars">★★★★★</div>
-                <p class="rev-text">«Современное оборудование, чисто, всегда есть свободные тренажёры. Безлимит на год — лучшая инвестиция. Хожу каждое утро!»</p>
-                <div class="rev-author"><div class="rev-ava">ДП</div><div><div class="rev-name">Дмитрий П.</div><div class="rev-since">Клиент с 2022</div></div></div>
+                <div class="rev-inner">
+                    <div class="rev-stars">★★★★★</div>
+                    <p class="rev-text">«Современное оборудование, чисто, всегда есть свободные тренажёры. Безлимит на год — лучшая инвестиция. Хожу каждое утро!»</p>
+                    <div class="rev-author"><div class="rev-ava">ДП</div><div><div class="rev-name">Дмитрий П.</div><div class="rev-since">Клиент с 2022</div></div></div>
+                    <div class="rev-progress"><div class="rev-progress-bar" id="rpb2"></div></div>
+                </div>
             </div>
             <div class="review-card">
-                <div class="rev-stars">★★★★★</div>
-                <p class="rev-text">«Инга составила мне план питания, и за 2 месяца ушло 7 кг. Теперь ещё занимаюсь стретчингом с Екатериной — результаты потрясающие!»</p>
-                <div class="rev-author"><div class="rev-ava">НВ</div><div><div class="rev-name">Наталья В.</div><div class="rev-since">Клиент с 2024</div></div></div>
+                <div class="rev-inner">
+                    <div class="rev-stars">★★★★★</div>
+                    <p class="rev-text">«Инга составила мне план питания, и за 2 месяца ушло 7 кг. Теперь ещё занимаюсь стретчингом с Екатериной — результаты потрясающие!»</p>
+                    <div class="rev-author"><div class="rev-ava">НВ</div><div><div class="rev-name">Наталья В.</div><div class="rev-since">Клиент с 2024</div></div></div>
+                    <div class="rev-progress"><div class="rev-progress-bar" id="rpb3"></div></div>
+                </div>
             </div>
             <div class="review-card">
-                <div class="rev-stars">★★★★★</div>
-                <p class="rev-text">«Ксения — невероятный преподаватель йоги. Захожу зажатым после работы, выхожу расслабленным. Спасибо всей команде!»</p>
-                <div class="rev-author"><div class="rev-ava">СМ</div><div><div class="rev-name">Сергей М.</div><div class="rev-since">Клиент с 2023</div></div></div>
+                <div class="rev-inner">
+                    <div class="rev-stars">★★★★★</div>
+                    <p class="rev-text">«Ксения — невероятный преподаватель йоги. Захожу зажатым после работы, выхожу расслабленным. Спасибо всей команде SEVER FITNESS!»</p>
+                    <div class="rev-author"><div class="rev-ava">СМ</div><div><div class="rev-name">Сергей М.</div><div class="rev-since">Клиент с 2023</div></div></div>
+                    <div class="rev-progress"><div class="rev-progress-bar" id="rpb4"></div></div>
+                </div>
             </div>
         </div>
     </div>
@@ -309,8 +332,8 @@
 <!-- CTA -->
 <section class="section">
     <div class="glass-card relative overflow-hidden p-10 md:p-16 text-center reveal-zoom">
-        <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-ember/20 blur-3xl"></div>
-        <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-purple-500/10 blur-3xl"></div>
+        <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-ember/20 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-purple-500/10 blur-3xl pointer-events-none"></div>
         <div class="relative">
             <h2 class="section-title">Готов начать?</h2>
             <p class="section-sub mx-auto mt-4">Звони — расскажем про клуб, программы и подберём абонемент под твою цель.</p>
@@ -326,29 +349,38 @@
 
 {% block scripts %}
 <script>
-// Promo slider
-let cur=0,timer;
+// ===== Promo slider =====
+let cur=0,slTimer;
 const track=document.getElementById('track');
 const dots=document.querySelectorAll('.dot');
 function showSlide(n){cur=(n+2)%2;track.style.transform=`translateX(-${cur*100}%)`;dots.forEach((d,i)=>d.classList.toggle('active',i===cur));}
-function changeSlide(d){showSlide(cur+d);resetTimer();}
-function goToSlide(n){showSlide(n);resetTimer();}
-function resetTimer(){clearInterval(timer);timer=setInterval(()=>showSlide(cur+1),5000);}
-resetTimer();
+function changeSlide(d){showSlide(cur+d);resetSlTimer();}
+function goToSlide(n){showSlide(n);resetSlTimer();}
+function resetSlTimer(){clearInterval(slTimer);slTimer=setInterval(()=>showSlide(cur+1),5000);}
+resetSlTimer();
 (function(){let sx=0;track.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});track.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)changeSlide(dx<0?1:-1);},{passive:true});})();
 
-// FAQ
+// ===== FAQ =====
 function toggleFaq(btn){const item=btn.closest('.faq-item');const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));if(!wasOpen)item.classList.add('open');}
 
-// ===== Auto-scroll reviews =====
+// ===== Reviews — full-width single-card carousel =====
 (function(){
+    const outer = document.getElementById('reviewsOuter');
     const track = document.getElementById('reviewsTrack');
     const navEl  = document.getElementById('revNav');
-    if (!track || !navEl) return;
+    if (!track || !navEl || !outer) return;
     const cards = Array.from(track.querySelectorAll('.review-card'));
+    const INTERVAL = 4500;
     let current = 0;
     let autoTimer;
-    let paused = false;
+    let progressTimer;
+    let progressStart;
+
+    // Set each card to exact outer width (no partial-card bleeding)
+    function setWidths() {
+        const w = outer.getBoundingClientRect().width;
+        cards.forEach(c => { c.style.minWidth = w + 'px'; c.style.maxWidth = w + 'px'; });
+    }
 
     // Build dots
     const dots = cards.map((_, i) => {
@@ -359,62 +391,134 @@ function toggleFaq(btn){const item=btn.closest('.faq-item');const wasOpen=item.c
         return d;
     });
 
-    function cardWidth() {
-        return cards[0].getBoundingClientRect().width + 20; // gap
-    }
+    function cardWidth() { return outer.getBoundingClientRect().width; }
 
     function goTo(idx) {
-        // Clamp to valid range
-        idx = Math.max(0, Math.min(idx, cards.length - 1));
+        idx = ((idx % cards.length) + cards.length) % cards.length;
         current = idx;
         track.style.transform = `translateX(-${current * cardWidth()}px)`;
         cards.forEach((c, i) => c.classList.toggle('active-card', i === current));
         dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        startProgress();
     }
 
-    function next() {
-        goTo(current < cards.length - 1 ? current + 1 : 0);
+    function startProgress() {
+        clearInterval(progressTimer);
+        // Reset all bars
+        cards.forEach((c, i) => {
+            const bar = c.querySelector('.rev-progress-bar');
+            if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+        });
+        const bar = cards[current].querySelector('.rev-progress-bar');
+        if (!bar) return;
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                bar.style.transition = `width ${INTERVAL}ms linear`;
+                bar.style.width = '100%';
+            });
+        });
     }
+
+    function next() { goTo(current + 1); }
 
     function resetAuto() {
         clearInterval(autoTimer);
-        autoTimer = setInterval(next, 3500);
+        autoTimer = setInterval(next, INTERVAL);
     }
 
-    // Pause on hover
-    track.parentElement.addEventListener('mouseenter', () => clearInterval(autoTimer));
-    track.parentElement.addEventListener('mouseleave', resetAuto);
+    let paused = false;
+    outer.addEventListener('mouseenter', () => { paused = true; clearInterval(autoTimer); });
+    outer.addEventListener('mouseleave', () => { paused = false; resetAuto(); });
 
     // Touch swipe
-    let sx = 0;
-    track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; clearInterval(autoTimer); }, {passive:true});
+    let sx = 0, sy = 0;
+    track.addEventListener('touchstart', e => {
+        sx = e.touches[0].clientX;
+        sy = e.touches[0].clientY;
+        clearInterval(autoTimer);
+    }, {passive:true});
     track.addEventListener('touchend', e => {
         const dx = e.changedTouches[0].clientX - sx;
-        if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+        const dy = e.changedTouches[0].clientY - sy;
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
         resetAuto();
     }, {passive:true});
 
-    // Recalculate on resize
-    window.addEventListener('resize', () => goTo(current));
+    window.addEventListener('resize', () => { setWidths(); goTo(current); });
 
+    setWidths();
     goTo(0);
     resetAuto();
 })();
 
-// Parallax hero
+// ===== Parallax hero (desktop only) =====
 (function(){
     const bg = document.getElementById('heroBg');
     if (!bg) return;
+    // Skip on mobile/touch devices for performance
+    if (window.matchMedia('(max-width:768px),(pointer:coarse)').matches) return;
     let ticking = false;
     window.addEventListener('scroll', function(){
         if (!ticking) {
             requestAnimationFrame(function(){
-                bg.style.transform = 'translateY(' + (window.scrollY * 0.4) + 'px)';
+                bg.style.transform = 'translateY(' + (window.scrollY * 0.38) + 'px)';
                 ticking = false;
             });
             ticking = true;
         }
     }, {passive:true});
+})();
+
+// ===== 3D Tilt on trainer cards (desktop only) =====
+(function(){
+    if (window.matchMedia('(pointer:coarse)').matches) return;
+    document.querySelectorAll('.trainer-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const r = card.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width - 0.5;
+            const y = (e.clientY - r.top) / r.height - 0.5;
+            card.style.transform = `perspective(900px) rotateY(${x*14}deg) rotateX(${-y*14}deg) scale3d(1.04,1.04,1.04)`;
+            card.style.boxShadow = `${-x*20}px ${-y*20}px 60px rgba(0,0,0,.5), 0 0 40px rgba(212,255,0,${0.08 + Math.abs(x)*0.12})`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+            card.style.boxShadow = '';
+        });
+    });
+})();
+
+// ===== Magnetic buttons (desktop only) =====
+(function(){
+    if (window.matchMedia('(pointer:coarse)').matches) return;
+    document.querySelectorAll('.btn-primary').forEach(btn => {
+        btn.addEventListener('mousemove', e => {
+            const r = btn.getBoundingClientRect();
+            const x = (e.clientX - r.left - r.width/2) * 0.22;
+            const y = (e.clientY - r.top - r.height/2) * 0.22;
+            btn.style.transform = `translate(${x}px,${y}px)`;
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = '';
+        });
+    });
+})();
+
+// ===== Spotlight cursor glow on sections =====
+(function(){
+    if (window.matchMedia('(pointer:coarse)').matches) return;
+    document.querySelectorAll('.glass-card, .price-card, .review-card').forEach(el => {
+        const spot = document.createElement('div');
+        spot.className = 'spotlight';
+        el.style.position = 'relative';
+        el.insertBefore(spot, el.firstChild);
+        el.addEventListener('mousemove', e => {
+            const r = el.getBoundingClientRect();
+            spot.style.setProperty('--sx', (e.clientX - r.left) + 'px');
+            spot.style.setProperty('--sy', (e.clientY - r.top) + 'px');
+            spot.classList.add('on');
+        });
+        el.addEventListener('mouseleave', () => spot.classList.remove('on'));
+    });
 })();
 </script>
 {% endblock %}
