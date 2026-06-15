@@ -13,26 +13,13 @@
   <!-- Dark overlay -->
   <div class="hero-overlay"></div>
 
-  <!-- Gradient animation blobs -->
-  <svg class="hero-grad-svg" aria-hidden="true">
-    <defs>
-      <filter id="gbBlur">
-        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
-        <feColorMatrix in="blur" mode="matrix"
-          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo"/>
-        <feBlend in="SourceGraphic" in2="goo"/>
-      </filter>
-    </defs>
-  </svg>
-  <div class="hero-grad-wrap" aria-hidden="true">
-    <div class="hero-grad-blobs" id="gradBlobs">
-      <div class="gb gb1"></div>
-      <div class="gb gb2"></div>
-      <div class="gb gb3"></div>
-      <div class="gb gb4"></div>
-      <div class="gb gb5"></div>
-    </div>
-    <div class="gb-ptr" id="gbPtr"></div>
+  <!-- Aurora Borealis effect -->
+  <div class="hero-aurora" aria-hidden="true">
+    <div class="aurora-band ab1"></div>
+    <div class="aurora-band ab2"></div>
+    <div class="aurora-band ab3"></div>
+    <div class="aurora-band ab4"></div>
+    <div class="aurora-curtain"></div>
   </div>
 
   <!-- Hero content -->
@@ -43,10 +30,10 @@
       <span class="em">В КАЖДОМ</span><br>
       ДНЕ
     </h1>
-    <p class="reveal delay-2" style="margin-top:1.5rem;font-size:1.1rem;color:rgba(255,255,255,.65);max-width:520px;line-height:1.65;text-shadow:0 2px 12px rgba(0,0,0,.5)">
+    <p class="reveal delay-2" style="margin-top:1.25rem;font-size:1.05rem;color:rgba(255,255,255,.65);max-width:500px;line-height:1.65">
       Современные тренажёры, опытные тренеры и особая атмосфера для твоего результата.
     </p>
-    <div class="reveal delay-3" style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
+    <div class="reveal delay-3" style="margin-top:1.75rem;display:flex;gap:1rem;flex-wrap:wrap">
       <a href="#price" class="btn-primary">Смотреть цены →</a>
       <a href="tel:+79129565511" class="btn-ghost">📞 Записаться</a>
     </div>
@@ -57,7 +44,7 @@
       </div>
       <div>
         <div class="hero-stat-val" data-counter data-target="10" data-suffix="">10</div>
-        <div class="hero-stat-label">Лет в Усинске</div>
+        <div class="hero-stat-label">Лет в городе</div>
       </div>
       <div>
         <div class="hero-stat-val">24/7</div>
@@ -111,7 +98,7 @@
             <span class="dot" onclick="goToSlide(1)"></span>
         </div>
     </div>
-    <div class="text-center mt-12">
+    <div class="text-center mt-10">
         <a href="tel:+79129565511" class="btn-primary">Получить акцию →</a>
     </div>
 </section>
@@ -126,17 +113,85 @@
         </div>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
-        <div class="trainer-card reveal-zoom"><img src="{{ url_for('static', filename='trainer4.jpg') }}" alt="Иван"><div class="trainer-info-overlay"><div class="text-xs text-ember font-bold uppercase tracking-widest">Пауэрлифтинг</div><h3 class="font-display font-black text-2xl mt-1">Иван</h3><p class="text-sm text-white/70 mt-1">Мастер спорта · стаж 23 года</p></div></div>
-        <div class="trainer-card reveal-zoom delay-1"><img src="{{ url_for('static', filename='trainer2.jpg') }}" alt="Инга"><div class="trainer-info-overlay"><div class="text-xs text-ember font-bold uppercase tracking-widest">Нутрициология</div><h3 class="font-display font-black text-2xl mt-1">Инга</h3><p class="text-sm text-white/70 mt-1">Фитнес-инструктор · 3 года</p></div></div>
-        <div class="trainer-card reveal-zoom delay-2"><img src="{{ url_for('static', filename='trainer3.jpg') }}" alt="Милена"><div class="trainer-info-overlay"><div class="text-xs text-ember font-bold uppercase tracking-widest">Персональный</div><h3 class="font-display font-black text-2xl mt-1">Милена</h3><p class="text-sm text-white/70 mt-1">5 лет опыта</p></div></div>
-        <div class="trainer-card reveal-zoom"><img src="{{ url_for('static', filename='trainer_kseniya.jpg') }}" alt="Ксения"><div class="trainer-info-overlay"><div class="text-xs text-ember font-bold uppercase tracking-widest">Хатха-йога</div><h3 class="font-display font-black text-2xl mt-1">Ксения</h3><p class="text-sm text-white/70 mt-1">Инструктор по хатха-йоге</p></div></div>
-        <div class="trainer-card reveal-zoom delay-1"><img src="{{ url_for('static', filename='trainer_yoga2.jpg') }}" alt="Йога"><div class="trainer-info-overlay"><div class="text-xs text-ember font-bold uppercase tracking-widest">Хатха-йога</div><h3 class="font-display font-black text-2xl mt-1">Инструктор</h3><p class="text-sm text-white/70 mt-1">Групповые занятия</p></div></div>
-        <div class="trainer-card reveal-zoom delay-2"><img src="{{ url_for('static', filename='trainer_ekaterina.jpg') }}" alt="Екатерина"><div class="trainer-info-overlay"><div class="text-xs text-ember font-bold uppercase tracking-widest">Стретчинг</div><h3 class="font-display font-black text-2xl mt-1">Екатерина</h3><p class="text-sm text-white/70 mt-1">Растяжка и гибкость</p></div></div>
-        <div class="trainer-card reveal-zoom"><img src="{{ url_for('static', filename='jumping1.jpg') }}" alt="Джампинг"><div class="trainer-info-overlay"><div class="text-xs text-ember font-bold uppercase tracking-widest">Джампинг</div><h3 class="font-display font-black text-2xl mt-1">Инструктор</h3><p class="text-sm text-white/70 mt-1">Прыжки на батутах · кардио</p></div></div>
-        <div class="trainer-card reveal-zoom delay-1"><img src="{{ url_for('static', filename='jumping2.jpg') }}" alt="Джампинг"><div class="trainer-info-overlay"><div class="text-xs text-ember font-bold uppercase tracking-widest">Джампинг</div><h3 class="font-display font-black text-2xl mt-1">Инструктор</h3><p class="text-sm text-white/70 mt-1">Прыжки на батутах · кардио</p></div></div>
-        <div class="trainer-card reveal-zoom delay-2"><img src="{{ url_for('static', filename='jumping3.jpg') }}" alt="Джампинг"><div class="trainer-info-overlay"><div class="text-xs text-ember font-bold uppercase tracking-widest">Джампинг</div><h3 class="font-display font-black text-2xl mt-1">Инструктор</h3><p class="text-sm text-white/70 mt-1">Прыжки на батутах · кардио</p></div></div>
+
+        <div class="trainer-card reveal-zoom">
+            <img src="{{ url_for('static', filename='trainer4.jpg') }}" alt="Иван">
+            <div class="trainer-info-overlay">
+                <div class="trainer-spec">Пауэрлифтинг</div>
+                <div class="trainer-name">Иван</div>
+                <div class="trainer-sub">Мастер спорта · 23 года стажа</div>
+            </div>
+        </div>
+
+        <div class="trainer-card reveal-zoom delay-1">
+            <img src="{{ url_for('static', filename='trainer2.jpg') }}" alt="Инга">
+            <div class="trainer-info-overlay">
+                <div class="trainer-spec">Нутрициология</div>
+                <div class="trainer-name">Инга</div>
+                <div class="trainer-sub">Фитнес-инструктор · 3 года</div>
+            </div>
+        </div>
+
+        <div class="trainer-card reveal-zoom delay-2">
+            <img src="{{ url_for('static', filename='trainer3.jpg') }}" alt="Милена">
+            <div class="trainer-info-overlay">
+                <div class="trainer-spec">Персональный</div>
+                <div class="trainer-name">Милена</div>
+                <div class="trainer-sub">5 лет опыта</div>
+            </div>
+        </div>
+
+        <div class="trainer-card reveal-zoom">
+            <img src="{{ url_for('static', filename='trainer_kseniya.jpg') }}" alt="Ксения">
+            <div class="trainer-info-overlay">
+                <div class="trainer-spec">Хатха-йога</div>
+                <div class="trainer-name">Ксения</div>
+                <div class="trainer-sub">Групповые занятия</div>
+            </div>
+        </div>
+
+        <div class="trainer-card reveal-zoom delay-1">
+            <img src="{{ url_for('static', filename='trainer_yoga2.jpg') }}" alt="Хатха-йога">
+            <div class="trainer-info-overlay">
+                <div class="trainer-spec">Хатха-йога</div>
+                <div class="trainer-sub">Групповые занятия</div>
+            </div>
+        </div>
+
+        <div class="trainer-card reveal-zoom delay-2">
+            <img src="{{ url_for('static', filename='trainer_ekaterina.jpg') }}" alt="Екатерина">
+            <div class="trainer-info-overlay">
+                <div class="trainer-spec">Стретчинг</div>
+                <div class="trainer-name">Екатерина</div>
+                <div class="trainer-sub">Растяжка и гибкость</div>
+            </div>
+        </div>
+
+        <div class="trainer-card reveal-zoom">
+            <img src="{{ url_for('static', filename='jumping1.jpg') }}" alt="Джампинг">
+            <div class="trainer-info-overlay">
+                <div class="trainer-spec">Джампинг</div>
+                <div class="trainer-sub">Прыжки на батутах · кардио</div>
+            </div>
+        </div>
+
+        <div class="trainer-card reveal-zoom delay-1">
+            <img src="{{ url_for('static', filename='jumping2.jpg') }}" alt="Джампинг">
+            <div class="trainer-info-overlay">
+                <div class="trainer-spec">Джампинг</div>
+                <div class="trainer-sub">Прыжки на батутах · кардио</div>
+            </div>
+        </div>
+
+        <div class="trainer-card reveal-zoom delay-2">
+            <img src="{{ url_for('static', filename='jumping3.jpg') }}" alt="Джампинг">
+            <div class="trainer-info-overlay">
+                <div class="trainer-spec">Джампинг</div>
+                <div class="trainer-sub">Прыжки на батутах · кардио</div>
+            </div>
+        </div>
+
     </div>
-    <p class="text-center text-sm text-white/30 mt-6">Уточните имена инструкторов джампинга по телефону</p>
 </section>
 
 <!-- GALLERY -->
@@ -155,37 +210,6 @@
     <p class="text-center text-sm text-white/30 mt-6">Нажми на фото, чтобы открыть</p>
 </section>
 
-<!-- SCHEDULE -->
-<section class="section" id="schedule">
-    <div class="text-center mb-12">
-        <span class="section-eyebrow reveal">Занятия</span>
-        <h2 class="section-title reveal delay-1">РАСПИСАНИЕ</h2>
-        <p class="section-sub mx-auto reveal delay-2">Групповые занятия и персональные тренировки каждую неделю</p>
-    </div>
-    <div class="reveal">
-        <div class="schedule-grid">
-            <div><div class="sched-header">Пн</div><div class="sched-event" style="--ev-color:#e6ff00"><div class="ev-time">7:00</div><div class="ev-name">Силовой тренинг</div><div class="ev-who">Иван</div></div><div class="sched-event" style="--ev-color:#34d399"><div class="ev-time">9:30</div><div class="ev-name">Стретчинг</div><div class="ev-who">Екатерина</div></div><div class="sched-event" style="--ev-color:#e6ff00"><div class="ev-time">18:00</div><div class="ev-name">Силовой тренинг</div><div class="ev-who">Иван</div></div><div class="sched-event" style="--ev-color:#a78bfa"><div class="ev-time">19:30</div><div class="ev-name">Хатха-йога</div><div class="ev-who">Ксения</div></div></div>
-            <div><div class="sched-header">Вт</div><div class="sched-event" style="--ev-color:#f97316"><div class="ev-time">7:30</div><div class="ev-name">Джампинг</div><div class="ev-who">Инструкторы</div></div><div class="sched-event" style="--ev-color:#34d399"><div class="ev-time">10:00</div><div class="ev-name">Стретчинг</div><div class="ev-who">Екатерина</div></div><div class="sched-event" style="--ev-color:#f97316"><div class="ev-time">18:30</div><div class="ev-name">Джампинг</div><div class="ev-who">Инструкторы</div></div><div class="sched-event" style="--ev-color:#60a5fa"><div class="ev-time">20:00</div><div class="ev-name">Нутрициология</div><div class="ev-who">Инга</div></div></div>
-            <div><div class="sched-header">Ср</div><div class="sched-event" style="--ev-color:#e6ff00"><div class="ev-time">7:00</div><div class="ev-name">Силовой тренинг</div><div class="ev-who">Иван</div></div><div class="sched-event" style="--ev-color:#a78bfa"><div class="ev-time">9:30</div><div class="ev-name">Хатха-йога</div><div class="ev-who">Ксения</div></div><div class="sched-event" style="--ev-color:#e6ff00"><div class="ev-time">18:00</div><div class="ev-name">Силовой тренинг</div><div class="ev-who">Иван</div></div><div class="sched-event" style="--ev-color:#34d399"><div class="ev-time">19:30</div><div class="ev-name">Стретчинг</div><div class="ev-who">Екатерина</div></div></div>
-            <div><div class="sched-header">Чт</div><div class="sched-event" style="--ev-color:#f97316"><div class="ev-time">7:30</div><div class="ev-name">Джампинг</div><div class="ev-who">Инструкторы</div></div><div class="sched-event" style="--ev-color:#60a5fa"><div class="ev-time">11:00</div><div class="ev-name">Нутрициология</div><div class="ev-who">Инга</div></div><div class="sched-event" style="--ev-color:#f97316"><div class="ev-time">18:30</div><div class="ev-name">Джампинг</div><div class="ev-who">Инструкторы</div></div><div class="sched-event" style="--ev-color:#a78bfa"><div class="ev-time">20:00</div><div class="ev-name">Хатха-йога</div><div class="ev-who">Ксения</div></div></div>
-            <div><div class="sched-header">Пт</div><div class="sched-event" style="--ev-color:#e6ff00"><div class="ev-time">7:00</div><div class="ev-name">Силовой тренинг</div><div class="ev-who">Иван</div></div><div class="sched-event" style="--ev-color:#34d399"><div class="ev-time">9:30</div><div class="ev-name">Стретчинг</div><div class="ev-who">Екатерина</div></div><div class="sched-event" style="--ev-color:#e6ff00"><div class="ev-time">18:00</div><div class="ev-name">Силовой тренинг</div><div class="ev-who">Иван</div></div><div class="sched-event" style="--ev-color:#f97316"><div class="ev-time">19:30</div><div class="ev-name">Джампинг</div><div class="ev-who">Инструкторы</div></div></div>
-            <div><div class="sched-header">Сб</div><div class="sched-event" style="--ev-color:#e6ff00"><div class="ev-time">9:00</div><div class="ev-name">Силовой тренинг</div><div class="ev-who">Иван</div></div><div class="sched-event" style="--ev-color:#a78bfa"><div class="ev-time">10:30</div><div class="ev-name">Хатха-йога</div><div class="ev-who">Ксения</div></div><div class="sched-event" style="--ev-color:#f97316"><div class="ev-time">12:00</div><div class="ev-name">Джампинг</div><div class="ev-who">Инструкторы</div></div><div class="sched-event" style="--ev-color:#34d399"><div class="ev-time">14:00</div><div class="ev-name">Стретчинг</div><div class="ev-who">Екатерина</div></div></div>
-            <div><div class="sched-header">Вс</div><div class="sched-event" style="--ev-color:#e6ff00"><div class="ev-time">10:00</div><div class="ev-name">Открытая тренировка</div><div class="ev-who">Свободно</div></div><div class="sched-event" style="--ev-color:#a78bfa"><div class="ev-time">11:30</div><div class="ev-name">Хатха-йога</div><div class="ev-who">Ксения</div></div><div class="sched-event" style="--ev-color:#34d399"><div class="ev-time">13:00</div><div class="ev-name">Стретчинг</div><div class="ev-who">Екатерина</div></div></div>
-        </div>
-        <div class="sched-legend">
-            <div class="leg-item"><div class="leg-dot" style="background:#e6ff00"></div>Силовой тренинг</div>
-            <div class="leg-item"><div class="leg-dot" style="background:#a78bfa"></div>Хатха-йога</div>
-            <div class="leg-item"><div class="leg-dot" style="background:#34d399"></div>Стретчинг</div>
-            <div class="leg-item"><div class="leg-dot" style="background:#f97316"></div>Джампинг</div>
-            <div class="leg-item"><div class="leg-dot" style="background:#60a5fa"></div>Нутрициология</div>
-        </div>
-        <div class="text-center mt-10">
-            <p class="text-white/40 text-sm mb-4">Расписание может меняться. Уточняйте актуальное время по телефону.</p>
-            <a href="tel:+79129565511" class="btn-primary">📞 Записаться на занятие</a>
-        </div>
-    </div>
-</section>
-
 <!-- PRICING -->
 <section class="section" id="price">
     <div class="text-center mb-12">
@@ -195,7 +219,10 @@
     </div>
     <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
         <div class="price-card featured reveal-left">
-            <div class="flex items-center justify-between mb-6"><div><div class="text-xs text-ember font-bold uppercase tracking-widest">Популярное</div><h3 class="font-display font-black text-3xl mt-1">БЕЗЛИМИТ</h3></div><div class="w-12 h-12 rounded-full bg-ember/20 grid place-items-center text-ember text-xl">∞</div></div>
+            <div class="flex items-center justify-between mb-6">
+                <div><div class="text-xs text-ember font-bold uppercase tracking-widest">Популярное</div><h3 class="font-display font-black text-3xl mt-1">БЕЗЛИМИТ</h3></div>
+                <div class="w-12 h-12 rounded-full bg-ember/20 grid place-items-center text-ember text-xl">∞</div>
+            </div>
             <div class="price-row"><span class="name">1 месяц</span><span class="val">5 000 ₽</span></div>
             <div class="price-row"><span class="name">3 месяца</span><span class="val">12 000 ₽</span></div>
             <div class="price-row"><span class="name">6 месяцев</span><span class="val">18 000 ₽</span></div>
@@ -205,7 +232,10 @@
             <a href="tel:+79129565511" class="btn-primary mt-8 w-full justify-center">Оформить →</a>
         </div>
         <div class="price-card reveal-right">
-            <div class="flex items-center justify-between mb-6"><div><div class="text-xs text-white/40 font-bold uppercase tracking-widest">Гибкость</div><h3 class="font-display font-black text-3xl mt-1">ПОСЕЩЕНИЯ</h3></div><div class="w-12 h-12 rounded-full bg-white/10 grid place-items-center text-white/70 text-lg">✓</div></div>
+            <div class="flex items-center justify-between mb-6">
+                <div><div class="text-xs text-white/40 font-bold uppercase tracking-widest">Гибкость</div><h3 class="font-display font-black text-3xl mt-1">ПОСЕЩЕНИЯ</h3></div>
+                <div class="w-12 h-12 rounded-full bg-white/10 grid place-items-center text-white/70 text-lg">✓</div>
+            </div>
             <div class="price-row"><span class="name">Разовое</span><span class="val">600 ₽</span></div>
             <div class="price-row"><span class="name">Тариф «Дуэт»</span><span class="val">1 000 ₽</span></div>
             <div class="price-row"><span class="name">8 посещений</span><span class="val">3 200 ₽</span></div>
@@ -219,15 +249,40 @@
 <!-- TESTIMONIALS -->
 <section class="section" id="reviews">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
-        <div><span class="section-eyebrow reveal">Отзывы</span><h2 class="section-title reveal delay-1">ЧТО ГОВОРЯТ<br>КЛИЕНТЫ</h2></div>
-        <div class="flex gap-2" id="revNavWrap"></div>
+        <div>
+            <span class="section-eyebrow reveal">Отзывы</span>
+            <h2 class="section-title reveal delay-1">ЧТО ГОВОРЯТ<br>КЛИЕНТЫ</h2>
+        </div>
+        <div class="rev-nav" id="revNav"></div>
     </div>
-    <div class="reviews-track reveal" id="reviewsTrack">
-        <div class="review-card"><div class="rev-stars">★★★★★</div><p class="rev-text">«Тренировки с Иваном изменили меня за год — набрал 12 кг мышечной массы. Профессионал своего дела, всегда объясняет технику. Лучший зал в Усинске!»</p><div class="rev-author"><div class="rev-ava">АС</div><div><div class="rev-name">Александр С.</div><div class="rev-since">Клиент с 2023</div></div></div></div>
-        <div class="review-card"><div class="rev-stars">★★★★★</div><p class="rev-text">«Хожу на джампинг уже полгода — это кайф! Сжигаю калории и заряжаюсь энергией на всю неделю.»</p><div class="rev-author"><div class="rev-ava">МК</div><div><div class="rev-name">Мария К.</div><div class="rev-since">Клиент с 2024</div></div></div></div>
-        <div class="review-card"><div class="rev-stars">★★★★★</div><p class="rev-text">«Современное оборудование, чисто, всегда есть свободные тренажёры. Безлимит на год — лучшая инвестиция.»</p><div class="rev-author"><div class="rev-ava">ДП</div><div><div class="rev-name">Дмитрий П.</div><div class="rev-since">Клиент с 2022</div></div></div></div>
-        <div class="review-card"><div class="rev-stars">★★★★★</div><p class="rev-text">«Инга составила мне план питания, и за 2 месяца ушло 7 кг. Теперь ещё занимаюсь стретчингом!»</p><div class="rev-author"><div class="rev-ava">НВ</div><div><div class="rev-name">Наталья В.</div><div class="rev-since">Клиент с 2024</div></div></div></div>
-        <div class="review-card"><div class="rev-stars">★★★★★</div><p class="rev-text">«Ксения — невероятный преподаватель йоги. Захожу зажатым, выхожу расслабленным.»</p><div class="rev-author"><div class="rev-ava">СМ</div><div><div class="rev-name">Сергей М.</div><div class="rev-since">Клиент с 2023</div></div></div></div>
+    <div class="reviews-outer reveal">
+        <div class="reviews-track" id="reviewsTrack">
+            <div class="review-card">
+                <div class="rev-stars">★★★★★</div>
+                <p class="rev-text">«Тренировки с Иваном изменили меня за год — набрал 12 кг мышечной массы. Профессионал своего дела, всегда объясняет технику. Лучший зал в Усинске!»</p>
+                <div class="rev-author"><div class="rev-ava">АС</div><div><div class="rev-name">Александр С.</div><div class="rev-since">Клиент с 2023</div></div></div>
+            </div>
+            <div class="review-card">
+                <div class="rev-stars">★★★★★</div>
+                <p class="rev-text">«Хожу на джампинг уже полгода — это кайф! Сжигаю калории и заряжаюсь энергией на всю неделю. Инструкторы классные, атмосфера заряжает!»</p>
+                <div class="rev-author"><div class="rev-ava">МК</div><div><div class="rev-name">Мария К.</div><div class="rev-since">Клиент с 2024</div></div></div>
+            </div>
+            <div class="review-card">
+                <div class="rev-stars">★★★★★</div>
+                <p class="rev-text">«Современное оборудование, чисто, всегда есть свободные тренажёры. Безлимит на год — лучшая инвестиция. Хожу каждое утро!»</p>
+                <div class="rev-author"><div class="rev-ava">ДП</div><div><div class="rev-name">Дмитрий П.</div><div class="rev-since">Клиент с 2022</div></div></div>
+            </div>
+            <div class="review-card">
+                <div class="rev-stars">★★★★★</div>
+                <p class="rev-text">«Инга составила мне план питания, и за 2 месяца ушло 7 кг. Теперь ещё занимаюсь стретчингом с Екатериной — результаты потрясающие!»</p>
+                <div class="rev-author"><div class="rev-ava">НВ</div><div><div class="rev-name">Наталья В.</div><div class="rev-since">Клиент с 2024</div></div></div>
+            </div>
+            <div class="review-card">
+                <div class="rev-stars">★★★★★</div>
+                <p class="rev-text">«Ксения — невероятный преподаватель йоги. Захожу зажатым после работы, выхожу расслабленным. Спасибо всей команде!»</p>
+                <div class="rev-author"><div class="rev-ava">СМ</div><div><div class="rev-name">Сергей М.</div><div class="rev-since">Клиент с 2023</div></div></div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -241,12 +296,12 @@
             <a href="tel:+79129565511" class="btn-primary mt-8 inline-flex reveal delay-3">📞 Позвонить</a>
         </div>
         <div class="faq-list reveal-right">
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Как записаться в клуб?</span><span class="faq-icon">+</span></button><div class="faq-a">Позвоните нам по номеру +7 (912) 956-55-11 или напишите в ВК — vk.com/sever.fitness.</div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Есть ли пробная тренировка?</span><span class="faq-icon">+</span></button><div class="faq-a">Да! Разовое занятие за 600 ₽ — познакомьтесь с клубом и оцените оборудование.</div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Как записаться в клуб?</span><span class="faq-icon">+</span></button><div class="faq-a">Позвоните нам по номеру +7 (912) 956-55-11 или напишите в ВКонтакте — vk.com/sever.fitness. Подберём удобное время для первого визита.</div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Есть ли пробная тренировка?</span><span class="faq-icon">+</span></button><div class="faq-a">Да! Вы можете прийти на разовое занятие за 600 ₽, познакомиться с клубом и оценить оборудование.</div></div>
             <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Можно ли заморозить абонемент?</span><span class="faq-icon">+</span></button><div class="faq-a">Да, заморозка доступна при покупке абонемента на 6 или 12 месяцев. Единоразово, максимальный срок — 30 дней.</div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Какой возраст принимают?</span><span class="faq-icon">+</span></button><div class="faq-a">Взрослые и подростки от 14 лет (с согласия родителей). Нагрузка подбирается индивидуально.</div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Есть ли раздевалки и душ?</span><span class="faq-icon">+</span></button><div class="faq-a">Да! Раздевалки, душевые кабины и шкафчики для личных вещей.</div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Можно перевести абонемент на другого?</span><span class="faq-icon">+</span></button><div class="faq-a">Да, смена владельца абонемента — 1 000 ₽. Обратитесь к администратору.</div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Какой возраст принимают?</span><span class="faq-icon">+</span></button><div class="faq-a">Мы работаем со взрослыми и подростками от 14 лет (с согласия родителей). Тренеры подбирают нагрузку индивидуально.</div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Есть ли раздевалки и душ?</span><span class="faq-icon">+</span></button><div class="faq-a">Конечно! В клубе есть раздевалки для мужчин и женщин, душевые кабины и шкафчики для личных вещей.</div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Можно ли перевести абонемент на другого?</span><span class="faq-icon">+</span></button><div class="faq-a">Да, смена владельца абонемента возможна за 1 000 ₽. Обратитесь к администратору клуба.</div></div>
         </div>
     </div>
 </section>
@@ -260,7 +315,7 @@
             <h2 class="section-title">Готов начать?</h2>
             <p class="section-sub mx-auto mt-4">Звони — расскажем про клуб, программы и подберём абонемент под твою цель.</p>
             <div class="flex flex-wrap justify-center gap-4 mt-8">
-                <a href="tel:+79129565511" class="btn-primary">📞 +7 (912) 956-55-11</a>
+                <a href="tel:+79129565511" class="btn-primary">📞 +7 (912) 956-55-11</a>
                 <a href="https://vk.com/sever.fitness" target="_blank" rel="noopener" class="btn-ghost">ВКонтакте →</a>
             </div>
         </div>
@@ -285,48 +340,81 @@ resetTimer();
 // FAQ
 function toggleFaq(btn){const item=btn.closest('.faq-item');const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));if(!wasOpen)item.classList.add('open');}
 
-// Reviews nav
-(function(){const t=document.getElementById('reviewsTrack');const w=document.getElementById('revNavWrap');if(!t||!w)return;const cards=t.querySelectorAll('.review-card');let ds=[];function build(){w.innerHTML='';ds=[];const vis=Math.max(1,Math.round(t.offsetWidth/cards[0].offsetWidth));const tot=Math.ceil(cards.length/vis);for(let i=0;i<tot;i++){const d=document.createElement('button');d.className='rev-dot'+(i===0?' active':'');d.addEventListener('click',()=>t.scrollTo({left:i*cards[0].offsetWidth*vis,behavior:'smooth'}));w.appendChild(d);ds.push(d);}}build();t.addEventListener('scroll',()=>{const vis=Math.max(1,Math.round(t.offsetWidth/cards[0].offsetWidth));const idx=Math.round(t.scrollLeft/cards[0].offsetWidth/vis);ds.forEach((d,i)=>d.classList.toggle('active',i===idx));},{passive:true});window.addEventListener('resize',build);})();
+// ===== Auto-scroll reviews =====
+(function(){
+    const track = document.getElementById('reviewsTrack');
+    const navEl  = document.getElementById('revNav');
+    if (!track || !navEl) return;
+    const cards = Array.from(track.querySelectorAll('.review-card'));
+    let current = 0;
+    let autoTimer;
+    let paused = false;
 
-// Parallax hero background
+    // Build dots
+    const dots = cards.map((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'rev-dot' + (i === 0 ? ' active' : '');
+        d.addEventListener('click', () => { goTo(i); resetAuto(); });
+        navEl.appendChild(d);
+        return d;
+    });
+
+    function cardWidth() {
+        return cards[0].getBoundingClientRect().width + 20; // gap
+    }
+
+    function goTo(idx) {
+        // Clamp to valid range
+        idx = Math.max(0, Math.min(idx, cards.length - 1));
+        current = idx;
+        track.style.transform = `translateX(-${current * cardWidth()}px)`;
+        cards.forEach((c, i) => c.classList.toggle('active-card', i === current));
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    function next() {
+        goTo(current < cards.length - 1 ? current + 1 : 0);
+    }
+
+    function resetAuto() {
+        clearInterval(autoTimer);
+        autoTimer = setInterval(next, 3500);
+    }
+
+    // Pause on hover
+    track.parentElement.addEventListener('mouseenter', () => clearInterval(autoTimer));
+    track.parentElement.addEventListener('mouseleave', resetAuto);
+
+    // Touch swipe
+    let sx = 0;
+    track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; clearInterval(autoTimer); }, {passive:true});
+    track.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - sx;
+        if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+        resetAuto();
+    }, {passive:true});
+
+    // Recalculate on resize
+    window.addEventListener('resize', () => goTo(current));
+
+    goTo(0);
+    resetAuto();
+})();
+
+// Parallax hero
 (function(){
     const bg = document.getElementById('heroBg');
     if (!bg) return;
     let ticking = false;
-    function onScroll() {
+    window.addEventListener('scroll', function(){
         if (!ticking) {
-            requestAnimationFrame(function() {
-                const scrollY = window.scrollY;
-                // Move bg at 40% of scroll speed (slower = deeper parallax feel)
-                bg.style.transform = 'translateY(' + (scrollY * 0.4) + 'px)';
+            requestAnimationFrame(function(){
+                bg.style.transform = 'translateY(' + (window.scrollY * 0.4) + 'px)';
                 ticking = false;
             });
             ticking = true;
         }
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-})();
-
-// Gradient blob mouse tracking
-(function(){
-    const ptr = document.getElementById('gbPtr');
-    if (!ptr) return;
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    if (isSafari) { const b = document.getElementById('gradBlobs'); if(b) b.classList.add('safari-blur'); }
-    let cx=0,cy=0,tx=0,ty=0;
-    const hero = document.querySelector('.hero-fullscreen');
-    if (!hero) return;
-    hero.addEventListener('mousemove', function(e){
-        const r = hero.getBoundingClientRect();
-        tx = e.clientX - r.left;
-        ty = e.clientY - r.top;
     }, {passive:true});
-    function move(){
-        cx += (tx-cx)/20; cy += (ty-cy)/20;
-        ptr.style.transform = `translate(${Math.round(cx)}px,${Math.round(cy)}px)`;
-        requestAnimationFrame(move);
-    }
-    move();
 })();
 </script>
 {% endblock %}
