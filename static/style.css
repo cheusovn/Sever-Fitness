@@ -258,8 +258,8 @@ a { text-decoration: none; color: inherit; }
     filter:drop-shadow(0 0 32px rgba(230,255,0,.55));
     white-space:nowrap;
 }
-.hero-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:2rem; max-width:560px; }
-@media(max-width:480px){ .hero-stats { grid-template-columns:repeat(2,1fr); max-width:320px; } }
+.hero-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2rem; max-width:480px; }
+@media(max-width:480px){ .hero-stats { grid-template-columns:repeat(3,1fr); max-width:100%; } }
 .hero-stat-val {
     font-family:'Unbounded',sans-serif; font-weight:900;
     font-size:clamp(1.6rem,3.5vw,2.8rem); line-height:1;
@@ -316,7 +316,10 @@ a { text-decoration: none; color: inherit; }
 }
 .section-title {
     font-family:'Unbounded',sans-serif; font-weight:900;
-    font-size:clamp(1.8rem,5vw,3.5rem); line-height:1; letter-spacing:-.03em; margin-top:1rem;
+    font-size:clamp(1.9rem,5.5vw,3.8rem); line-height:.95; letter-spacing:-.03em; margin-top:1rem;
+}
+.text-center .section-title {
+    display:inline-block;
 }
 .section-sub { color:rgba(255,255,255,.5); font-size:1rem; max-width:42rem; margin-top:.75rem; }
 
@@ -346,6 +349,7 @@ a { text-decoration: none; color: inherit; }
     opacity:0; transition:opacity .3s; border-radius:inherit;
 }
 .spotlight.on { opacity:1; }
+.glass-card > *:not(.spotlight) { position:relative; z-index:1; }
 
 /* ===== Trainer Cards ===== */
 .trainer-card {
@@ -442,7 +446,16 @@ a { text-decoration: none; color: inherit; }
     content:''; position:absolute; top:0; left:0; right:0; height:2px;
     background:linear-gradient(90deg,transparent,var(--ember),transparent);
     box-shadow:0 0 20px rgba(230,255,0,.55);
+    animation:featuredPulse 2.5s ease-in-out infinite;
 }
+@keyframes featuredPulse { 0%,100%{opacity:.6;box-shadow:0 0 16px rgba(230,255,0,.4)} 50%{opacity:1;box-shadow:0 0 32px rgba(230,255,0,.8)} }
+.price-card::after {
+    content:''; position:absolute; inset:0; z-index:0; pointer-events:none;
+    background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.05) 50%,transparent 65%);
+    transform:translateX(-120%) skewX(-12deg); transition:transform .65s ease;
+}
+.price-card:hover::after { transform:translateX(140%) skewX(-12deg); }
+.price-card > * { position:relative; z-index:1; }
 .price-row { display:flex; justify-content:space-between; align-items:center; padding:.85rem 0; border-bottom:1px dashed rgba(255,255,255,.07); }
 .price-row:last-child { border:none; }
 .price-row .name { color:rgba(255,255,255,.65); }
@@ -556,8 +569,9 @@ a { text-decoration: none; color: inherit; }
 /* ===== Neon divider ===== */
 .neon-divider {
     width:100%; max-width:1280px; margin:0 auto; padding:0 1.5rem; height:1px;
-    background:linear-gradient(90deg,transparent,rgba(212,255,0,.3) 30%,rgba(230,255,0,.55) 50%,rgba(212,255,0,.3) 70%,transparent);
-    box-shadow:0 0 16px rgba(212,255,0,.18);
+    background:linear-gradient(90deg,transparent,rgba(212,255,0,.25) 20%,rgba(230,255,0,.6) 50%,rgba(212,255,0,.25) 80%,transparent);
+    box-shadow:0 0 24px rgba(212,255,0,.2), 0 1px 0 rgba(212,255,0,.05);
+    position:relative;
 }
 
 /* ===== Reveal animations ===== */
@@ -600,13 +614,30 @@ a { text-decoration: none; color: inherit; }
     .hero-corner { display:none; }
     .trainer-card { transform-style:flat !important; }
     .btn-primary::after { animation:none; }
-    .grain-overlay { opacity:.03; }
+    .grain-overlay { opacity:.025; }
     .hero-dot-grid { background-size:32px 32px; }
+    .hero-stats { gap:.75rem; }
+    .hero-stat-val { font-size:clamp(1.4rem,6vw,2.2rem); }
+    .trainer-name { font-size:.75rem; }
+    .trainer-sub { font-size:.65rem; }
+    .trainer-info-overlay { padding:.75rem .85rem; }
 }
 @media(prefers-reduced-motion:reduce){
     .hero-dot-grid,.hero-beam,.grain-overlay,.marquee-track,.firefly,.btn-primary::after
     { animation:none !important; }
     .reveal,.reveal-left,.reveal-right,.reveal-zoom { opacity:1 !important; transform:none !important; }
+}
+
+/* ===== Footer premium border ===== */
+footer {
+    border-top:1px solid rgba(255,255,255,.06);
+    position:relative;
+}
+footer::before {
+    content:''; position:absolute; top:-1px; left:50%; transform:translateX(-50%);
+    width:200px; height:1px;
+    background:linear-gradient(90deg,transparent,var(--ember),transparent);
+    box-shadow:0 0 20px rgba(230,255,0,.4);
 }
 
 /* ===== Lenis ===== */
