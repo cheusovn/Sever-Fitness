@@ -393,8 +393,8 @@ a { text-decoration: none; color: inherit; }
     aspect-ratio:16/9; width:100%;
 }
 .slides-track { display:flex; height:100%; transition:transform .85s cubic-bezier(.7,0,.2,1); }
-.slide { min-width:100%; flex-shrink:0; height:100%; overflow:hidden; }
-.slide img { width:100%; height:100%; object-fit:cover; display:block; }
+.slide { min-width:100%; flex-shrink:0; height:100%; overflow:hidden; background:#000; }
+.slide img { width:100%; height:100%; object-fit:contain; display:block; }
 .slider-arrow {
     position:absolute; top:50%; transform:translateY(-50%);
     width:44px; height:44px; border-radius:50%;
