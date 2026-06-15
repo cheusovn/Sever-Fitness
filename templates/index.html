@@ -4,17 +4,25 @@
 
 <!-- FULLSCREEN HERO -->
 <section class="hero-fullscreen">
+
+  <!-- Parallax photo -->
   <div class="hero-bg" id="heroBg">
     <img src="{{ url_for('static', filename='gym1.jpg') }}" alt="SEVER FITNESS зал" loading="eager">
   </div>
+
+  <!-- Dark overlay -->
   <div class="hero-overlay"></div>
-  <div class="hero-aurora" aria-hidden="true">
-    <div class="aurora-band ab1"></div>
-    <div class="aurora-band ab2"></div>
-    <div class="aurora-band ab3"></div>
-    <div class="aurora-band ab4"></div>
-    <div class="aurora-curtain"></div>
+
+  <!-- Premium hero deco: dot grid + beam + corners (no heavy blur) -->
+  <div class="hero-deco" aria-hidden="true">
+    <div class="hero-dot-grid"></div>
+    <div class="hero-beam"></div>
+    <div class="hero-corner tl"></div>
+    <div class="hero-corner br"></div>
+    <div class="hero-line"></div>
   </div>
+
+  <!-- Content -->
   <div class="hero-content">
     <div class="section-eyebrow reveal" style="margin-bottom:1.5rem">★ ПРЕМИАЛЬНЫЙ КЛУБ · УСИНСК</div>
     <h1 class="hero-display reveal delay-1">
@@ -22,7 +30,7 @@
       <span class="em">В КАЖДОМ</span><br>
       ДНЕ
     </h1>
-    <p class="reveal delay-2" style="margin-top:1.25rem;font-size:1.05rem;color:rgba(255,255,255,.65);max-width:500px;line-height:1.65">
+    <p class="reveal delay-2" style="margin-top:1.25rem;font-size:1.05rem;color:rgba(255,255,255,.65);max-width:480px;line-height:1.65">
       Современные тренажёры, опытные тренеры и особая атмосфера для твоего результата.
     </p>
     <div class="reveal delay-3" style="margin-top:1.75rem;display:flex;gap:1rem;flex-wrap:wrap">
@@ -48,10 +56,12 @@
       </div>
     </div>
   </div>
+
   <div class="scroll-hint" aria-hidden="true">
     <div class="scroll-hint-line"></div>
     <span>scroll</span>
   </div>
+
 </section>
 
 <!-- MARQUEE -->
@@ -70,24 +80,27 @@
 
 <!-- PROMO -->
 <section class="section" id="promo">
-    <div class="text-center mb-12">
+    <div class="text-center mb-10">
         <span class="section-eyebrow reveal">Спецпредложения</span>
         <h2 class="section-title reveal delay-1">АКЦИИ МЕСЯЦА</h2>
         <p class="section-sub mx-auto reveal delay-2">Успей воспользоваться выгодными предложениями клуба</p>
     </div>
-    <div class="slider reveal-zoom">
-        <div class="slides-track" id="track">
-            <div class="slide"><img src="{{ url_for('static', filename='promo1.jpg') }}" alt="Акция 1"></div>
-            <div class="slide"><img src="{{ url_for('static', filename='promo2.jpg') }}" alt="Акция 2"></div>
-        </div>
-        <button class="slider-arrow prev" onclick="changeSlide(-1)">‹</button>
-        <button class="slider-arrow next" onclick="changeSlide(1)">›</button>
-        <div class="slider-dots">
-            <span class="dot active" onclick="goToSlide(0)"></span>
-            <span class="dot" onclick="goToSlide(1)"></span>
+    <!-- Neat frame wrapper -->
+    <div class="slider-wrap reveal-zoom">
+        <div class="slider">
+            <div class="slides-track" id="track">
+                <div class="slide"><img src="{{ url_for('static', filename='promo1.jpg') }}" alt="Акция 1"></div>
+                <div class="slide"><img src="{{ url_for('static', filename='promo2.jpg') }}" alt="Акция 2"></div>
+            </div>
+            <button class="slider-arrow prev" onclick="changeSlide(-1)">‹</button>
+            <button class="slider-arrow next" onclick="changeSlide(1)">›</button>
+            <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+            </div>
         </div>
     </div>
-    <div class="text-center mt-10">
+    <div class="text-center mt-8">
         <a href="tel:+79129565511" class="btn-primary">Получить акцию →</a>
     </div>
 </section>
@@ -96,14 +109,14 @@
 
 <!-- TRAINERS -->
 <section class="section" id="trainers">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
         <div>
             <span class="section-eyebrow reveal">Команда</span>
             <h2 class="section-title reveal delay-1">НАШИ ТРЕНЕРЫ</h2>
             <p class="section-sub reveal delay-2">Мастера спорта, нутрициологи, тренеры с многолетним стажем</p>
         </div>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
 
         <div class="trainer-card reveal-zoom">
             <img src="{{ url_for('static', filename='trainer4.jpg') }}" alt="Иван">
@@ -111,7 +124,7 @@
             <div class="trainer-info-overlay">
                 <div class="trainer-spec">Пауэрлифтинг</div>
                 <div class="trainer-name">Иван</div>
-                <div class="trainer-sub">Мастер спорта · 23 года стажа</div>
+                <div class="trainer-sub">Мастер спорта · 23 г.</div>
             </div>
         </div>
 
@@ -121,7 +134,7 @@
             <div class="trainer-info-overlay">
                 <div class="trainer-spec">Нутрициология</div>
                 <div class="trainer-name">Инга</div>
-                <div class="trainer-sub">Фитнес-инструктор · 3 года</div>
+                <div class="trainer-sub">Фитнес · 3 года</div>
             </div>
         </div>
 
@@ -141,12 +154,12 @@
             <div class="trainer-info-overlay">
                 <div class="trainer-spec">Хатха-йога</div>
                 <div class="trainer-name">Ксения</div>
-                <div class="trainer-sub">Групповые занятия</div>
+                <div class="trainer-sub">Групповые</div>
             </div>
         </div>
 
         <div class="trainer-card reveal-zoom delay-1">
-            <img src="{{ url_for('static', filename='trainer_yoga2.jpg') }}" alt="Йога">
+            <img src="{{ url_for('static', filename='trainer_yoga2.jpg') }}" alt="Хатха-йога">
             <div class="trainer-card-glow"></div>
             <div class="trainer-info-overlay">
                 <div class="trainer-spec">Хатха-йога</div>
@@ -160,7 +173,7 @@
             <div class="trainer-info-overlay">
                 <div class="trainer-spec">Стретчинг</div>
                 <div class="trainer-name">Екатерина</div>
-                <div class="trainer-sub">Растяжка и гибкость</div>
+                <div class="trainer-sub">Растяжка</div>
             </div>
         </div>
 
@@ -169,7 +182,7 @@
             <div class="trainer-card-glow"></div>
             <div class="trainer-info-overlay">
                 <div class="trainer-spec">Джампинг</div>
-                <div class="trainer-sub">Прыжки на батутах · кардио</div>
+                <div class="trainer-sub">Батуты · кардио</div>
             </div>
         </div>
 
@@ -178,7 +191,7 @@
             <div class="trainer-card-glow"></div>
             <div class="trainer-info-overlay">
                 <div class="trainer-spec">Джампинг</div>
-                <div class="trainer-sub">Прыжки на батутах · кардио</div>
+                <div class="trainer-sub">Батуты · кардио</div>
             </div>
         </div>
 
@@ -187,7 +200,7 @@
             <div class="trainer-card-glow"></div>
             <div class="trainer-info-overlay">
                 <div class="trainer-spec">Джампинг</div>
-                <div class="trainer-sub">Прыжки на батутах · кардио</div>
+                <div class="trainer-sub">Батуты · кардио</div>
             </div>
         </div>
 
@@ -198,7 +211,7 @@
 
 <!-- GALLERY -->
 <section class="section" id="gallery">
-    <div class="text-center mb-12">
+    <div class="text-center mb-10">
         <span class="section-eyebrow reveal">Клуб</span>
         <h2 class="section-title reveal delay-1">ЗАГЛЯНИ ВНУТРЬ</h2>
         <p class="section-sub mx-auto reveal delay-2">Современное пространство, премиум-оборудование, особая атмосфера</p>
@@ -209,31 +222,31 @@
         <div class="gallery-item gi-3 reveal-zoom delay-2"><img src="{{ url_for('static', filename='gym3.jpg') }}" alt="Функциональная"><span class="caption">Функциональная</span></div>
         <div class="gallery-item gi-4 reveal-zoom delay-3"><img src="{{ url_for('static', filename='gym4.jpg') }}" alt="Тренажёрный"><span class="caption">Тренажёрный зал</span></div>
     </div>
-    <p class="text-center text-sm text-white/30 mt-6">Нажми на фото, чтобы открыть</p>
+    <p class="text-center text-sm text-white/30 mt-5">Нажми на фото, чтобы открыть</p>
 </section>
 
 <div class="neon-divider"></div>
 
 <!-- PRICING -->
 <section class="section" id="price">
-    <div class="text-center mb-12">
+    <div class="text-center mb-10">
         <span class="section-eyebrow reveal">Тарифы</span>
         <h2 class="section-title reveal delay-1">ПРАЙС</h2>
-        <p class="section-sub mx-auto reveal delay-2">Абонементы без скрытых условий — выбирай удобный формат</p>
+        <p class="section-sub mx-auto reveal delay-2">Абонементы без скрытых условий</p>
     </div>
     <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
         <div class="price-card featured reveal-left">
             <div class="flex items-center justify-between mb-6">
                 <div><div class="text-xs text-ember font-bold uppercase tracking-widest">Популярное</div><h3 class="font-display font-black text-3xl mt-1">БЕЗЛИМИТ</h3></div>
-                <div class="w-12 h-12 rounded-full bg-ember/20 grid place-items-center text-ember text-xl" style="box-shadow:0 0 20px rgba(230,255,0,.2)">∞</div>
+                <div class="w-12 h-12 rounded-full bg-ember/20 grid place-items-center text-ember text-xl" style="box-shadow:0 0 18px rgba(230,255,0,.2)">∞</div>
             </div>
             <div class="price-row"><span class="name">1 месяц</span><span class="val">5 000 ₽</span></div>
             <div class="price-row"><span class="name">3 месяца</span><span class="val">12 000 ₽</span></div>
             <div class="price-row"><span class="name">6 месяцев</span><span class="val">18 000 ₽</span></div>
             <div class="price-row"><span class="name">12 месяцев</span><span class="val">24 000 ₽</span></div>
             <div class="price-row"><span class="name">Смена владельца</span><span class="val">1 000 ₽</span></div>
-            <ul class="mt-6 space-y-2 text-xs text-white/50"><li>· Заморозка на 6 и 12 мес. — единоразово</li><li>· Максимальный срок заморозки — 30 дней</li></ul>
-            <a href="tel:+79129565511" class="btn-primary mt-8 w-full justify-center">Оформить →</a>
+            <ul class="mt-5 space-y-2 text-xs text-white/50"><li>· Заморозка на 6 и 12 мес. — единоразово</li><li>· Максимальный срок заморозки — 30 дней</li></ul>
+            <a href="tel:+79129565511" class="btn-primary mt-7 w-full justify-center">Оформить →</a>
         </div>
         <div class="price-card reveal-right">
             <div class="flex items-center justify-between mb-6">
@@ -244,8 +257,8 @@
             <div class="price-row"><span class="name">Тариф «Дуэт»</span><span class="val">1 000 ₽</span></div>
             <div class="price-row"><span class="name">8 посещений</span><span class="val">3 200 ₽</span></div>
             <div class="price-row"><span class="name">12 посещений</span><span class="val">4 200 ₽</span></div>
-            <ul class="mt-6 space-y-2 text-xs text-white/50"><li>· Абонементы на 8 и 12 посещений — 1 месяц с активации</li><li>· По истечении 30 дней активация автоматически</li></ul>
-            <a href="tel:+79129565511" class="btn-ghost mt-8 w-full justify-center">Записаться →</a>
+            <ul class="mt-5 space-y-2 text-xs text-white/50"><li>· Абонементы на 8 и 12 — 1 месяц с активации</li><li>· По истечении 30 дней активация автоматически</li></ul>
+            <a href="tel:+79129565511" class="btn-ghost mt-7 w-full justify-center">Записаться →</a>
         </div>
     </div>
 </section>
@@ -254,57 +267,45 @@
 
 <!-- TESTIMONIALS -->
 <section class="section" id="reviews">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
         <div>
             <span class="section-eyebrow reveal">Отзывы</span>
             <h2 class="section-title reveal delay-1">ЧТО ГОВОРЯТ<br>КЛИЕНТЫ</h2>
         </div>
-        <div class="flex items-center gap-4">
-            <div class="rev-nav" id="revNav"></div>
-        </div>
+        <div class="rev-nav" id="revNav"></div>
     </div>
     <div class="reviews-outer reveal" id="reviewsOuter">
         <div class="reviews-track" id="reviewsTrack">
-            <div class="review-card">
-                <div class="rev-inner">
-                    <div class="rev-stars">★★★★★</div>
-                    <p class="rev-text">«Тренировки с Иваном изменили меня за год — набрал 12 кг мышечной массы. Профессионал своего дела, всегда объясняет технику. Лучший зал в Усинске!»</p>
-                    <div class="rev-author"><div class="rev-ava">АС</div><div><div class="rev-name">Александр С.</div><div class="rev-since">Клиент с 2023</div></div></div>
-                    <div class="rev-progress"><div class="rev-progress-bar" id="rpb0"></div></div>
-                </div>
-            </div>
-            <div class="review-card">
-                <div class="rev-inner">
-                    <div class="rev-stars">★★★★★</div>
-                    <p class="rev-text">«Хожу на джампинг уже полгода — это кайф! Сжигаю калории и заряжаюсь энергией на всю неделю. Инструкторы классные, атмосфера заряжает!»</p>
-                    <div class="rev-author"><div class="rev-ava">МК</div><div><div class="rev-name">Мария К.</div><div class="rev-since">Клиент с 2024</div></div></div>
-                    <div class="rev-progress"><div class="rev-progress-bar" id="rpb1"></div></div>
-                </div>
-            </div>
-            <div class="review-card">
-                <div class="rev-inner">
-                    <div class="rev-stars">★★★★★</div>
-                    <p class="rev-text">«Современное оборудование, чисто, всегда есть свободные тренажёры. Безлимит на год — лучшая инвестиция. Хожу каждое утро!»</p>
-                    <div class="rev-author"><div class="rev-ava">ДП</div><div><div class="rev-name">Дмитрий П.</div><div class="rev-since">Клиент с 2022</div></div></div>
-                    <div class="rev-progress"><div class="rev-progress-bar" id="rpb2"></div></div>
-                </div>
-            </div>
-            <div class="review-card">
-                <div class="rev-inner">
-                    <div class="rev-stars">★★★★★</div>
-                    <p class="rev-text">«Инга составила мне план питания, и за 2 месяца ушло 7 кг. Теперь ещё занимаюсь стретчингом с Екатериной — результаты потрясающие!»</p>
-                    <div class="rev-author"><div class="rev-ava">НВ</div><div><div class="rev-name">Наталья В.</div><div class="rev-since">Клиент с 2024</div></div></div>
-                    <div class="rev-progress"><div class="rev-progress-bar" id="rpb3"></div></div>
-                </div>
-            </div>
-            <div class="review-card">
-                <div class="rev-inner">
-                    <div class="rev-stars">★★★★★</div>
-                    <p class="rev-text">«Ксения — невероятный преподаватель йоги. Захожу зажатым после работы, выхожу расслабленным. Спасибо всей команде SEVER FITNESS!»</p>
-                    <div class="rev-author"><div class="rev-ava">СМ</div><div><div class="rev-name">Сергей М.</div><div class="rev-since">Клиент с 2023</div></div></div>
-                    <div class="rev-progress"><div class="rev-progress-bar" id="rpb4"></div></div>
-                </div>
-            </div>
+            <div class="review-card"><div class="rev-inner">
+                <div class="rev-stars">★★★★★</div>
+                <p class="rev-text">«Тренировки с Иваном изменили меня за год — набрал 12 кг мышечной массы. Профессионал, всегда объясняет технику. Лучший зал в Усинске!»</p>
+                <div class="rev-author"><div class="rev-ava">АС</div><div><div class="rev-name">Александр С.</div><div class="rev-since">Клиент с 2023</div></div></div>
+                <div class="rev-progress"><div class="rev-progress-bar" id="rpb0"></div></div>
+            </div></div>
+            <div class="review-card"><div class="rev-inner">
+                <div class="rev-stars">★★★★★</div>
+                <p class="rev-text">«Хожу на джампинг уже полгода — это кайф! Сжигаю калории и заряжаюсь энергией на всю неделю. Инструкторы классные, атмосфера заряжает!»</p>
+                <div class="rev-author"><div class="rev-ava">МК</div><div><div class="rev-name">Мария К.</div><div class="rev-since">Клиент с 2024</div></div></div>
+                <div class="rev-progress"><div class="rev-progress-bar" id="rpb1"></div></div>
+            </div></div>
+            <div class="review-card"><div class="rev-inner">
+                <div class="rev-stars">★★★★★</div>
+                <p class="rev-text">«Современное оборудование, чисто, всегда есть свободные тренажёры. Безлимит на год — лучшая инвестиция. Хожу каждое утро!»</p>
+                <div class="rev-author"><div class="rev-ava">ДП</div><div><div class="rev-name">Дмитрий П.</div><div class="rev-since">Клиент с 2022</div></div></div>
+                <div class="rev-progress"><div class="rev-progress-bar" id="rpb2"></div></div>
+            </div></div>
+            <div class="review-card"><div class="rev-inner">
+                <div class="rev-stars">★★★★★</div>
+                <p class="rev-text">«Инга составила мне план питания, и за 2 месяца ушло 7 кг. Теперь ещё занимаюсь стретчингом с Екатериной — результаты потрясающие!»</p>
+                <div class="rev-author"><div class="rev-ava">НВ</div><div><div class="rev-name">Наталья В.</div><div class="rev-since">Клиент с 2024</div></div></div>
+                <div class="rev-progress"><div class="rev-progress-bar" id="rpb3"></div></div>
+            </div></div>
+            <div class="review-card"><div class="rev-inner">
+                <div class="rev-stars">★★★★★</div>
+                <p class="rev-text">«Ксения — невероятный преподаватель йоги. Захожу зажатым после работы, выхожу расслабленным. Спасибо всей команде SEVER FITNESS!»</p>
+                <div class="rev-author"><div class="rev-ava">СМ</div><div><div class="rev-name">Сергей М.</div><div class="rev-since">Клиент с 2023</div></div></div>
+                <div class="rev-progress"><div class="rev-progress-bar" id="rpb4"></div></div>
+            </div></div>
         </div>
     </div>
 </section>
@@ -324,7 +325,7 @@
             <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Можно ли заморозить абонемент?</span><span class="faq-icon">+</span></button><div class="faq-a">Да, заморозка доступна при покупке абонемента на 6 или 12 месяцев. Единоразово, максимальный срок — 30 дней.</div></div>
             <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Какой возраст принимают?</span><span class="faq-icon">+</span></button><div class="faq-a">Мы работаем со взрослыми и подростками от 14 лет (с согласия родителей). Тренеры подбирают нагрузку индивидуально.</div></div>
             <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Есть ли раздевалки и душ?</span><span class="faq-icon">+</span></button><div class="faq-a">Конечно! В клубе есть раздевалки для мужчин и женщин, душевые кабины и шкафчики для личных вещей.</div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Можно ли перевести абонемент на другого?</span><span class="faq-icon">+</span></button><div class="faq-a">Да, смена владельца абонемента возможна за 1 000 ₽. Обратитесь к администратору клуба.</div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Можно ли перевести абонемент?</span><span class="faq-icon">+</span></button><div class="faq-a">Да, смена владельца абонемента возможна за 1 000 ₽. Обратитесь к администратору клуба.</div></div>
         </div>
     </div>
 </section>
@@ -368,156 +369,98 @@ function toggleFaq(btn){const item=btn.closest('.faq-item');const wasOpen=item.c
     const outer = document.getElementById('reviewsOuter');
     const track = document.getElementById('reviewsTrack');
     const navEl  = document.getElementById('revNav');
-    if (!track || !navEl || !outer) return;
+    if (!track||!navEl||!outer) return;
     const cards = Array.from(track.querySelectorAll('.review-card'));
     const INTERVAL = 4500;
-    let current = 0;
-    let autoTimer;
-    let progressTimer;
-    let progressStart;
+    let current = 0, autoTimer;
 
-    // Set each card to exact outer width (no partial-card bleeding)
-    function setWidths() {
+    function setWidths(){
         const w = outer.getBoundingClientRect().width;
-        cards.forEach(c => { c.style.minWidth = w + 'px'; c.style.maxWidth = w + 'px'; });
+        cards.forEach(c=>{ c.style.minWidth=w+'px'; c.style.maxWidth=w+'px'; });
     }
-
-    // Build dots
-    const dots = cards.map((_, i) => {
-        const d = document.createElement('button');
-        d.className = 'rev-dot' + (i === 0 ? ' active' : '');
-        d.addEventListener('click', () => { goTo(i); resetAuto(); });
-        navEl.appendChild(d);
-        return d;
+    const dots = cards.map((_,i)=>{
+        const d=document.createElement('button');
+        d.className='rev-dot'+(i===0?' active':'');
+        d.addEventListener('click',()=>{ goTo(i); resetAuto(); });
+        navEl.appendChild(d); return d;
     });
-
-    function cardWidth() { return outer.getBoundingClientRect().width; }
-
-    function goTo(idx) {
-        idx = ((idx % cards.length) + cards.length) % cards.length;
-        current = idx;
-        track.style.transform = `translateX(-${current * cardWidth()}px)`;
-        cards.forEach((c, i) => c.classList.toggle('active-card', i === current));
-        dots.forEach((d, i) => d.classList.toggle('active', i === current));
-        startProgress();
+    function cardWidth(){ return outer.getBoundingClientRect().width; }
+    function goTo(idx){
+        idx=((idx%cards.length)+cards.length)%cards.length;
+        current=idx;
+        track.style.transform=`translateX(-${current*cardWidth()}px)`;
+        cards.forEach((c,i)=>c.classList.toggle('active-card',i===current));
+        dots.forEach((d,i)=>d.classList.toggle('active',i===current));
+        // Progress bar
+        cards.forEach(c=>{ const b=c.querySelector('.rev-progress-bar'); if(b){b.style.transition='none';b.style.width='0%';} });
+        const bar=cards[current].querySelector('.rev-progress-bar');
+        if(bar) requestAnimationFrame(()=>requestAnimationFrame(()=>{ bar.style.transition=`width ${INTERVAL}ms linear`; bar.style.width='100%'; }));
     }
-
-    function startProgress() {
-        clearInterval(progressTimer);
-        // Reset all bars
-        cards.forEach((c, i) => {
-            const bar = c.querySelector('.rev-progress-bar');
-            if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
-        });
-        const bar = cards[current].querySelector('.rev-progress-bar');
-        if (!bar) return;
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                bar.style.transition = `width ${INTERVAL}ms linear`;
-                bar.style.width = '100%';
-            });
-        });
-    }
-
-    function next() { goTo(current + 1); }
-
-    function resetAuto() {
-        clearInterval(autoTimer);
-        autoTimer = setInterval(next, INTERVAL);
-    }
-
-    let paused = false;
-    outer.addEventListener('mouseenter', () => { paused = true; clearInterval(autoTimer); });
-    outer.addEventListener('mouseleave', () => { paused = false; resetAuto(); });
-
-    // Touch swipe
-    let sx = 0, sy = 0;
-    track.addEventListener('touchstart', e => {
-        sx = e.touches[0].clientX;
-        sy = e.touches[0].clientY;
-        clearInterval(autoTimer);
-    }, {passive:true});
-    track.addEventListener('touchend', e => {
-        const dx = e.changedTouches[0].clientX - sx;
-        const dy = e.changedTouches[0].clientY - sy;
-        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+    function next(){ goTo(current+1); }
+    function resetAuto(){ clearInterval(autoTimer); autoTimer=setInterval(next,INTERVAL); }
+    outer.addEventListener('mouseenter',()=>clearInterval(autoTimer));
+    outer.addEventListener('mouseleave',resetAuto);
+    let sx=0,sy=0;
+    track.addEventListener('touchstart',e=>{ sx=e.touches[0].clientX; sy=e.touches[0].clientY; clearInterval(autoTimer); },{passive:true});
+    track.addEventListener('touchend',e=>{
+        const dx=e.changedTouches[0].clientX-sx, dy=e.changedTouches[0].clientY-sy;
+        if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>40) goTo(dx<0?current+1:current-1);
         resetAuto();
-    }, {passive:true});
-
-    window.addEventListener('resize', () => { setWidths(); goTo(current); });
-
-    setWidths();
-    goTo(0);
-    resetAuto();
+    },{passive:true});
+    window.addEventListener('resize',()=>{ setWidths(); goTo(current); });
+    setWidths(); goTo(0); resetAuto();
 })();
 
-// ===== Parallax hero (desktop only) =====
+// ===== Parallax hero — desktop only =====
 (function(){
-    const bg = document.getElementById('heroBg');
-    if (!bg) return;
-    // Skip on mobile/touch devices for performance
-    if (window.matchMedia('(max-width:768px),(pointer:coarse)').matches) return;
-    let ticking = false;
-    window.addEventListener('scroll', function(){
-        if (!ticking) {
-            requestAnimationFrame(function(){
-                bg.style.transform = 'translateY(' + (window.scrollY * 0.38) + 'px)';
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }, {passive:true});
+    const bg=document.getElementById('heroBg');
+    if(!bg||window.matchMedia('(max-width:768px),(pointer:coarse)').matches) return;
+    let ticking=false;
+    window.addEventListener('scroll',()=>{
+        if(!ticking){ requestAnimationFrame(()=>{ bg.style.transform='translateY('+(window.scrollY*.35)+'px)'; ticking=false; }); ticking=true; }
+    },{passive:true});
 })();
 
-// ===== 3D Tilt on trainer cards (desktop only) =====
+// ===== 3D tilt on trainer cards — desktop only =====
 (function(){
-    if (window.matchMedia('(pointer:coarse)').matches) return;
-    document.querySelectorAll('.trainer-card').forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const r = card.getBoundingClientRect();
-            const x = (e.clientX - r.left) / r.width - 0.5;
-            const y = (e.clientY - r.top) / r.height - 0.5;
-            card.style.transform = `perspective(900px) rotateY(${x*14}deg) rotateX(${-y*14}deg) scale3d(1.04,1.04,1.04)`;
-            card.style.boxShadow = `${-x*20}px ${-y*20}px 60px rgba(0,0,0,.5), 0 0 40px rgba(212,255,0,${0.08 + Math.abs(x)*0.12})`;
+    if(window.matchMedia('(pointer:coarse)').matches) return;
+    document.querySelectorAll('.trainer-card').forEach(card=>{
+        card.addEventListener('mousemove',e=>{
+            const r=card.getBoundingClientRect();
+            const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+            card.style.transform=`perspective(900px) rotateY(${x*13}deg) rotateX(${-y*13}deg) scale3d(1.04,1.04,1.04)`;
+            card.style.boxShadow=`${-x*18}px ${-y*18}px 50px rgba(0,0,0,.5),0 0 36px rgba(212,255,0,${.06+Math.abs(x)*.1})`;
         });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-            card.style.boxShadow = '';
-        });
+        card.addEventListener('mouseleave',()=>{ card.style.transform=''; card.style.boxShadow=''; });
     });
 })();
 
-// ===== Magnetic buttons (desktop only) =====
+// ===== Magnetic buttons — desktop only =====
 (function(){
-    if (window.matchMedia('(pointer:coarse)').matches) return;
-    document.querySelectorAll('.btn-primary').forEach(btn => {
-        btn.addEventListener('mousemove', e => {
-            const r = btn.getBoundingClientRect();
-            const x = (e.clientX - r.left - r.width/2) * 0.22;
-            const y = (e.clientY - r.top - r.height/2) * 0.22;
-            btn.style.transform = `translate(${x}px,${y}px)`;
+    if(window.matchMedia('(pointer:coarse)').matches) return;
+    document.querySelectorAll('.btn-primary').forEach(btn=>{
+        btn.addEventListener('mousemove',e=>{
+            const r=btn.getBoundingClientRect();
+            const x=(e.clientX-r.left-r.width/2)*.2, y=(e.clientY-r.top-r.height/2)*.2;
+            btn.style.transform=`translate(${x}px,${y}px)`;
         });
-        btn.addEventListener('mouseleave', () => {
-            btn.style.transform = '';
-        });
+        btn.addEventListener('mouseleave',()=>{ btn.style.transform=''; });
     });
 })();
 
-// ===== Spotlight cursor glow on sections =====
+// ===== Spotlight on cards — desktop only =====
 (function(){
-    if (window.matchMedia('(pointer:coarse)').matches) return;
-    document.querySelectorAll('.glass-card, .price-card, .review-card').forEach(el => {
-        const spot = document.createElement('div');
-        spot.className = 'spotlight';
-        el.style.position = 'relative';
-        el.insertBefore(spot, el.firstChild);
-        el.addEventListener('mousemove', e => {
-            const r = el.getBoundingClientRect();
-            spot.style.setProperty('--sx', (e.clientX - r.left) + 'px');
-            spot.style.setProperty('--sy', (e.clientY - r.top) + 'px');
+    if(window.matchMedia('(pointer:coarse)').matches) return;
+    document.querySelectorAll('.glass-card,.price-card,.review-card').forEach(el=>{
+        const spot=document.createElement('div'); spot.className='spotlight';
+        el.style.position='relative'; el.insertBefore(spot,el.firstChild);
+        el.addEventListener('mousemove',e=>{
+            const r=el.getBoundingClientRect();
+            spot.style.setProperty('--sx',(e.clientX-r.left)+'px');
+            spot.style.setProperty('--sy',(e.clientY-r.top)+'px');
             spot.classList.add('on');
         });
-        el.addEventListener('mouseleave', () => spot.classList.remove('on'));
+        el.addEventListener('mouseleave',()=>spot.classList.remove('on'));
     });
 })();
 </script>
