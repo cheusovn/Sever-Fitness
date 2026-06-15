@@ -2,6 +2,7 @@
 
 {% block content %}
 
+<!-- HERO -->
 <section class="relative max-w-7xl mx-auto px-6 pt-12 pb-24">
     <div class="grid lg:grid-cols-12 gap-10 items-center">
         <div class="lg:col-span-7">
@@ -12,26 +13,36 @@
                 ДНЕ
             </h1>
             <p class="mt-8 text-lg text-white/60 max-w-xl reveal delay-2 text-balance">
-                SEVER FITNESS — место, где современные тренажёры, опытные тренеры и атмосфера превращают тренировку в ритуал. Найди свою форму.
+                SEVER FITNESS — место, где современные тренажёры, опытные тренеры и особая атмосфера превращают тренировку в ритуал. Найди свою форму.
             </p>
             <div class="mt-10 flex flex-wrap gap-4 reveal delay-3">
                 <a href="#price" class="btn-primary">Смотреть цены →</a>
                 <a href="tel:+79129565511" class="btn-ghost">📞 Записаться</a>
             </div>
             <div class="mt-14 grid grid-cols-3 gap-8 max-w-lg reveal delay-4">
-                <div><div class="stat-num">5000+</div><div class="text-xs text-white/50 mt-2 uppercase tracking-wider">Клиентов</div></div>
-                <div><div class="stat-num">10</div><div class="text-xs text-white/50 mt-2 uppercase tracking-wider">Лет в Усинске</div></div>
-                <div><div class="stat-num">24/7</div><div class="text-xs text-white/50 mt-2 uppercase tracking-wider">Доступ</div></div>
+                <div>
+                    <div class="stat-num" data-counter data-target="5000+" data-suffix="+">5000+</div>
+                    <div class="text-xs text-white/50 mt-2 uppercase tracking-wider">Клиентов</div>
+                </div>
+                <div>
+                    <div class="stat-num" data-counter data-target="10" data-suffix="">10</div>
+                    <div class="text-xs text-white/50 mt-2 uppercase tracking-wider">Лет в Усинске</div>
+                </div>
+                <div>
+                    <div class="stat-num">24/7</div>
+                    <div class="text-xs text-white/50 mt-2 uppercase tracking-wider">Доступ</div>
+                </div>
             </div>
         </div>
         <div class="lg:col-span-5 reveal-right">
             <div class="hero-img-wrap aspect-[4/5]">
-                <img src="{{ url_for('static', filename='gym1.jpg') }}" alt="SEVER FITNESS">
+                <img src="{{ url_for('static', filename='gym1.jpg') }}" alt="SEVER FITNESS — главный зал">
             </div>
         </div>
     </div>
 </section>
 
+<!-- MARQUEE -->
 <div class="marquee py-10 border-y border-white/5">
     <div class="marquee-track">
         <span>СИЛА</span><span class="fill">·</span>
@@ -45,13 +56,13 @@
     </div>
 </div>
 
+<!-- PROMO -->
 <section class="section" id="promo">
     <div class="text-center mb-12">
         <span class="section-eyebrow reveal">Спецпредложения</span>
         <h2 class="section-title reveal delay-1">АКЦИИ МЕСЯЦА</h2>
         <p class="section-sub mx-auto reveal delay-2">Успей воспользоваться выгодными предложениями клуба</p>
     </div>
-
     <div class="slider reveal-zoom">
         <div class="slides-track" id="track">
             <div class="slide"><img src="{{ url_for('static', filename='promo1.jpg') }}" alt="Акция 1"></div>
@@ -64,12 +75,12 @@
             <span class="dot" onclick="goToSlide(1)"></span>
         </div>
     </div>
-
     <div class="text-center mt-12">
         <a href="tel:+79129565511" class="btn-primary">Получить акцию →</a>
     </div>
 </section>
 
+<!-- TRAINERS -->
 <section class="section" id="trainers">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
         <div>
@@ -78,7 +89,6 @@
             <p class="section-sub reveal delay-2">Мастера спорта, нутрициологи, тренеры с многолетним стажем</p>
         </div>
     </div>
-
     <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
         <div class="trainer-card reveal-zoom">
             <img src="{{ url_for('static', filename='trainer4.jpg') }}" alt="Иван">
@@ -125,26 +135,26 @@
             <div class="trainer-info-overlay">
                 <div class="text-xs text-ember font-bold uppercase tracking-widest">Джампинг</div>
                 <h3 class="font-display font-black text-2xl mt-1">Инструкторы</h3>
-                <p class="text-sm text-white/70 mt-1">Прыжки на батутах · энергия и кардио</p>
+                <p class="text-sm text-white/70 mt-1">Прыжки на батутах · энергия</p>
             </div>
         </div>
     </div>
 </section>
 
+<!-- GALLERY -->
 <section class="section" id="gallery">
     <div class="text-center mb-12">
         <span class="section-eyebrow reveal">Клуб</span>
         <h2 class="section-title reveal delay-1">ЗАГЛЯНИ ВНУТРЬ</h2>
         <p class="section-sub mx-auto reveal delay-2">Современное пространство, премиум-оборудование, особая атмосфера</p>
     </div>
-
     <div class="gallery-grid">
         <div class="gallery-item gi-1 reveal-zoom">
             <img src="{{ url_for('static', filename='gym1.jpg') }}" alt="Главный зал">
             <span class="caption">Главный зал</span>
         </div>
         <div class="gallery-item gi-2 reveal-zoom delay-1">
-            <img src="{{ url_for('static', filename='gym2.jpg') }}" alt="Кардио">
+            <img src="{{ url_for('static', filename='gym2.jpg') }}" alt="Кардио-зона">
             <span class="caption">Кардио-зона</span>
         </div>
         <div class="gallery-item gi-3 reveal-zoom delay-2">
@@ -156,15 +166,203 @@
             <span class="caption">Тренажёрный зал</span>
         </div>
     </div>
+    <p class="text-center text-sm text-white/30 mt-6">Нажми на фото, чтобы открыть</p>
 </section>
 
+<!-- SCHEDULE -->
+<section class="section" id="schedule">
+    <div class="text-center mb-12">
+        <span class="section-eyebrow reveal">Занятия</span>
+        <h2 class="section-title reveal delay-1">РАСПИСАНИЕ</h2>
+        <p class="section-sub mx-auto reveal delay-2">Групповые занятия и персональные тренировки каждую неделю</p>
+    </div>
+    <div class="reveal">
+        <div class="schedule-grid">
+            <!-- ПН -->
+            <div>
+                <div class="sched-header">Пн</div>
+                <div class="sched-event" style="--ev-color:#e6ff00">
+                    <div class="ev-time">7:00</div>
+                    <div class="ev-name">Силовой тренинг</div>
+                    <div class="ev-who">Иван</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#34d399">
+                    <div class="ev-time">9:30</div>
+                    <div class="ev-name">Стретчинг</div>
+                    <div class="ev-who">Екатерина</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#e6ff00">
+                    <div class="ev-time">18:00</div>
+                    <div class="ev-name">Силовой тренинг</div>
+                    <div class="ev-who">Иван</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#a78bfa">
+                    <div class="ev-time">19:30</div>
+                    <div class="ev-name">Хатха-йога</div>
+                    <div class="ev-who">Ксения</div>
+                </div>
+            </div>
+            <!-- ВТ -->
+            <div>
+                <div class="sched-header">Вт</div>
+                <div class="sched-event" style="--ev-color:#f97316">
+                    <div class="ev-time">7:30</div>
+                    <div class="ev-name">Джампинг</div>
+                    <div class="ev-who">Инструкторы</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#34d399">
+                    <div class="ev-time">10:00</div>
+                    <div class="ev-name">Стретчинг</div>
+                    <div class="ev-who">Екатерина</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#f97316">
+                    <div class="ev-time">18:30</div>
+                    <div class="ev-name">Джампинг</div>
+                    <div class="ev-who">Инструкторы</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#60a5fa">
+                    <div class="ev-time">20:00</div>
+                    <div class="ev-name">Нутрициология</div>
+                    <div class="ev-who">Инга</div>
+                </div>
+            </div>
+            <!-- СР -->
+            <div>
+                <div class="sched-header">Ср</div>
+                <div class="sched-event" style="--ev-color:#e6ff00">
+                    <div class="ev-time">7:00</div>
+                    <div class="ev-name">Силовой тренинг</div>
+                    <div class="ev-who">Иван</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#a78bfa">
+                    <div class="ev-time">9:30</div>
+                    <div class="ev-name">Хатха-йога</div>
+                    <div class="ev-who">Ксения</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#e6ff00">
+                    <div class="ev-time">18:00</div>
+                    <div class="ev-name">Силовой тренинг</div>
+                    <div class="ev-who">Иван</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#34d399">
+                    <div class="ev-time">19:30</div>
+                    <div class="ev-name">Стретчинг</div>
+                    <div class="ev-who">Екатерина</div>
+                </div>
+            </div>
+            <!-- ЧТ -->
+            <div>
+                <div class="sched-header">Чт</div>
+                <div class="sched-event" style="--ev-color:#f97316">
+                    <div class="ev-time">7:30</div>
+                    <div class="ev-name">Джампинг</div>
+                    <div class="ev-who">Инструкторы</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#60a5fa">
+                    <div class="ev-time">11:00</div>
+                    <div class="ev-name">Нутрициология</div>
+                    <div class="ev-who">Инга</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#f97316">
+                    <div class="ev-time">18:30</div>
+                    <div class="ev-name">Джампинг</div>
+                    <div class="ev-who">Инструкторы</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#a78bfa">
+                    <div class="ev-time">20:00</div>
+                    <div class="ev-name">Хатха-йога</div>
+                    <div class="ev-who">Ксения</div>
+                </div>
+            </div>
+            <!-- ПТ -->
+            <div>
+                <div class="sched-header">Пт</div>
+                <div class="sched-event" style="--ev-color:#e6ff00">
+                    <div class="ev-time">7:00</div>
+                    <div class="ev-name">Силовой тренинг</div>
+                    <div class="ev-who">Иван</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#34d399">
+                    <div class="ev-time">9:30</div>
+                    <div class="ev-name">Стретчинг</div>
+                    <div class="ev-who">Екатерина</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#e6ff00">
+                    <div class="ev-time">18:00</div>
+                    <div class="ev-name">Силовой тренинг</div>
+                    <div class="ev-who">Иван</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#f97316">
+                    <div class="ev-time">19:30</div>
+                    <div class="ev-name">Джампинг</div>
+                    <div class="ev-who">Инструкторы</div>
+                </div>
+            </div>
+            <!-- СБ -->
+            <div>
+                <div class="sched-header">Сб</div>
+                <div class="sched-event" style="--ev-color:#e6ff00">
+                    <div class="ev-time">9:00</div>
+                    <div class="ev-name">Силовой тренинг</div>
+                    <div class="ev-who">Иван</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#a78bfa">
+                    <div class="ev-time">10:30</div>
+                    <div class="ev-name">Хатха-йога</div>
+                    <div class="ev-who">Ксения</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#f97316">
+                    <div class="ev-time">12:00</div>
+                    <div class="ev-name">Джампинг</div>
+                    <div class="ev-who">Инструкторы</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#34d399">
+                    <div class="ev-time">14:00</div>
+                    <div class="ev-name">Стретчинг</div>
+                    <div class="ev-who">Екатерина</div>
+                </div>
+            </div>
+            <!-- ВС -->
+            <div>
+                <div class="sched-header">Вс</div>
+                <div class="sched-event" style="--ev-color:#e6ff00">
+                    <div class="ev-time">10:00</div>
+                    <div class="ev-name">Открытая тренировка</div>
+                    <div class="ev-who">Свободно</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#a78bfa">
+                    <div class="ev-time">11:30</div>
+                    <div class="ev-name">Хатха-йога</div>
+                    <div class="ev-who">Ксения</div>
+                </div>
+                <div class="sched-event" style="--ev-color:#34d399">
+                    <div class="ev-time">13:00</div>
+                    <div class="ev-name">Стретчинг</div>
+                    <div class="ev-who">Екатерина</div>
+                </div>
+            </div>
+        </div>
+        <div class="sched-legend">
+            <div class="leg-item"><div class="leg-dot" style="background:#e6ff00"></div>Силовой тренинг</div>
+            <div class="leg-item"><div class="leg-dot" style="background:#a78bfa"></div>Хатха-йога</div>
+            <div class="leg-item"><div class="leg-dot" style="background:#34d399"></div>Стретчинг</div>
+            <div class="leg-item"><div class="leg-dot" style="background:#f97316"></div>Джампинг</div>
+            <div class="leg-item"><div class="leg-dot" style="background:#60a5fa"></div>Нутрициология</div>
+        </div>
+        <div class="text-center mt-10">
+            <p class="text-white/40 text-sm mb-4">Расписание может меняться. Уточняйте актуальное время по телефону.</p>
+            <a href="tel:+79129565511" class="btn-primary">📞 Записаться на занятие</a>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING -->
 <section class="section" id="price">
     <div class="text-center mb-12">
         <span class="section-eyebrow reveal">Тарифы</span>
         <h2 class="section-title reveal delay-1">ПРАЙС</h2>
         <p class="section-sub mx-auto reveal delay-2">Абонементы без скрытых условий — выбирай удобный формат</p>
     </div>
-
     <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
         <div class="price-card featured reveal-left">
             <div class="flex items-center justify-between mb-6">
@@ -185,7 +383,6 @@
             </ul>
             <a href="tel:+79129565511" class="btn-primary mt-8 w-full justify-center">Оформить →</a>
         </div>
-
         <div class="price-card reveal-right">
             <div class="flex items-center justify-between mb-6">
                 <div>
@@ -200,13 +397,123 @@
             <div class="price-row"><span class="name">12 посещений</span><span class="val">4 200 ₽</span></div>
             <ul class="mt-6 space-y-2 text-xs text-white/50">
                 <li>· Абонементы на 8 и 12 посещений — 1 месяц с активации</li>
-                <li>· По истечении 30 дней активация — автоматически</li>
+                <li>· По истечении 30 дней активация автоматически</li>
             </ul>
             <a href="tel:+79129565511" class="btn-ghost mt-8 w-full justify-center">Записаться →</a>
         </div>
     </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section class="section" id="reviews">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+        <div>
+            <span class="section-eyebrow reveal">Отзывы</span>
+            <h2 class="section-title reveal delay-1">ЧТО ГОВОРЯТ<br>КЛИЕНТЫ</h2>
+        </div>
+        <div class="flex gap-2" id="revNavWrap"></div>
+    </div>
+    <div class="reviews-track reveal" id="reviewsTrack">
+        <div class="review-card">
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">«Тренировки с Иваном изменили меня за год — набрал 12 кг мышечной массы. Профессионал своего дела, всегда объясняет технику и следит за нагрузкой. Лучший зал в Усинске!»</p>
+            <div class="rev-author">
+                <div class="rev-ava">АС</div>
+                <div><div class="rev-name">Александр С.</div><div class="rev-since">Клиент с 2023 года</div></div>
+            </div>
+        </div>
+        <div class="review-card">
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">«Хожу на джампинг уже полгода — это кайф! Сжигаю калории и заряжаюсь энергией на всю неделю. Инструкторы классные, атмосфера заряжает. Всем советую!»</p>
+            <div class="rev-author">
+                <div class="rev-ava">МК</div>
+                <div><div class="rev-name">Мария К.</div><div class="rev-since">Клиент с 2024 года</div></div>
+            </div>
+        </div>
+        <div class="review-card">
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">«Современное оборудование, чисто, всегда есть свободные тренажёры. Безлимит на год — лучшая инвестиция. Хожу каждое утро, стало привычкой!»</p>
+            <div class="rev-author">
+                <div class="rev-ava">ДП</div>
+                <div><div class="rev-name">Дмитрий П.</div><div class="rev-since">Клиент с 2022 года</div></div>
+            </div>
+        </div>
+        <div class="review-card">
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">«Инга составила мне план питания, и за 2 месяца ушло 7 кг без стресса. Всё индивидуально, учла мои предпочтения. Теперь ещё занимаюсь стретчингом с Екатериной!»</p>
+            <div class="rev-author">
+                <div class="rev-ava">НВ</div>
+                <div><div class="rev-name">Наталья В.</div><div class="rev-since">Клиент с 2024 года</div></div>
+            </div>
+        </div>
+        <div class="review-card">
+            <div class="rev-stars">★★★★★</div>
+            <p class="rev-text">«Ксения — невероятный преподаватель йоги. Клуб стал для меня местом силы: захожу зажатым после работы, выхожу расслабленным и спокойным. Спасибо всей команде!»</p>
+            <div class="rev-author">
+                <div class="rev-ava">СМ</div>
+                <div><div class="rev-name">Сергей М.</div><div class="rev-since">Клиент с 2023 года</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+            <span class="section-eyebrow reveal">Вопросы</span>
+            <h2 class="section-title reveal delay-1">ЧАСТО<br>СПРАШИВАЮТ</h2>
+            <p class="section-sub reveal delay-2 mt-4">Не нашли ответ? Позвоните — ответим на любой вопрос.</p>
+            <a href="tel:+79129565511" class="btn-primary mt-8 inline-flex reveal delay-3">📞 Позвонить</a>
+        </div>
+        <div class="faq-list reveal-right">
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    <span>Как записаться в клуб?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">Позвоните нам по номеру +7 (912) 956-55-11 или напишите в ВКонтакте — vk.com/sever.fitness. Подберём удобное время для первого визита и проведём экскурсию по клубу.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    <span>Есть ли пробная тренировка?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">Да! Вы можете прийти на разовое занятие за 600 ₽, познакомиться с клубом, пообщаться с тренерами и оценить оборудование. После этого легче выбрать подходящий абонемент.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    <span>Можно ли заморозить абонемент?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">Да, заморозка доступна при покупке абонемента на 6 или 12 месяцев. Единоразово, максимальный срок — 30 дней. Уточните условия у администратора при оформлении.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    <span>Какой возраст принимают?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">Мы работаем со взрослыми и подростками от 14 лет (с согласия родителей). Тренеры подбирают нагрузку индивидуально под возраст и уровень подготовки.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    <span>Есть ли раздевалки и душ?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">Конечно! В клубе есть раздевалки для мужчин и женщин, душевые кабины и шкафчики для личных вещей. Всё необходимое для комфортной тренировки.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    <span>Можно ли перевести абонемент на другого?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">Да, смена владельца абонемента возможна за 1 000 ₽. Обратитесь к администратору клуба с документами.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
 <section class="section">
     <div class="glass-card relative overflow-hidden p-10 md:p-16 text-center reveal-zoom">
         <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-ember/20 blur-3xl"></div>
@@ -214,7 +521,10 @@
         <div class="relative">
             <h2 class="section-title">Готов начать?</h2>
             <p class="section-sub mx-auto mt-4">Звони — расскажем про клуб, программы и подберём абонемент под твою цель.</p>
-            <a href="tel:+79129565511" class="btn-primary mt-8">📞 +7 (912) 956-55-11</a>
+            <div class="flex flex-wrap justify-center gap-4 mt-8">
+                <a href="tel:+79129565511" class="btn-primary">📞 +7 (912) 956-55-11</a>
+                <a href="https://vk.com/sever.fitness" target="_blank" rel="noopener" class="btn-ghost">ВКонтакте →</a>
+            </div>
         </div>
     </div>
 </section>
@@ -223,21 +533,55 @@
 
 {% block scripts %}
 <script>
-    let current = 0;
-    const track = document.getElementById('track');
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    const total = slides.length;
-    function showSlide(n) {
-        current = (n + total) % total;
-        track.style.transform = `translateX(-${current * 100}%)`;
-        dots.forEach(d => d.classList.remove('active'));
-        dots[current].classList.add('active');
+    // Promo slider
+    let cur=0, timer;
+    const track=document.getElementById('track');
+    const dots=document.querySelectorAll('.dot');
+    function showSlide(n){ cur=(n+2)%2; track.style.transform=`translateX(-${cur*100}%)`; dots.forEach((d,i)=>d.classList.toggle('active',i===cur)); }
+    function changeSlide(d){ showSlide(cur+d); resetTimer(); }
+    function goToSlide(n){ showSlide(n); resetTimer(); }
+    function resetTimer(){ clearInterval(timer); timer=setInterval(()=>showSlide(cur+1),5000); }
+    resetTimer();
+
+    // Touch swipe for slider
+    (function(){
+        let sx=0;
+        track.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});
+        track.addEventListener('touchend',e=>{ const dx=e.changedTouches[0].clientX-sx; if(Math.abs(dx)>50){ changeSlide(dx<0?1:-1); } },{passive:true});
+    })();
+
+    // FAQ accordion
+    function toggleFaq(btn){
+        const item=btn.closest('.faq-item');
+        const wasOpen=item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
+        if(!wasOpen) item.classList.add('open');
     }
-    function changeSlide(dir) { showSlide(current + dir); resetTimer(); }
-    function goToSlide(n) { showSlide(n); resetTimer(); }
-    let timer = setInterval(() => showSlide(current + 1), 5000);
-    function resetTimer() { clearInterval(timer); timer = setInterval(() => showSlide(current + 1), 5000); }
-    showSlide(0);
+
+    // Reviews scroll nav dots
+    (function(){
+        const track=document.getElementById('reviewsTrack');
+        const wrap=document.getElementById('revNavWrap');
+        const cards=track.querySelectorAll('.review-card');
+        const visible=()=>Math.max(1,Math.round(track.offsetWidth/cards[0].offsetWidth));
+        const total=()=>Math.ceil(cards.length/visible());
+        let dots=[];
+        function buildDots(){
+            wrap.innerHTML='';
+            dots=[];
+            for(let i=0;i<total();i++){
+                const d=document.createElement('button');
+                d.className='rev-dot'+(i===0?' active':'');
+                d.addEventListener('click',()=>{ track.scrollTo({left:i*cards[0].offsetWidth*visible(),behavior:'smooth'}); });
+                wrap.appendChild(d); dots.push(d);
+            }
+        }
+        buildDots();
+        track.addEventListener('scroll',()=>{
+            const idx=Math.round(track.scrollLeft/cards[0].offsetWidth/visible());
+            dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+        },{passive:true});
+        window.addEventListener('resize',buildDots);
+    })();
 </script>
 {% endblock %}
