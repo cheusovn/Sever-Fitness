@@ -154,7 +154,7 @@ a { text-decoration: none; color: inherit; }
 ============================================= */
 .hero-fullscreen {
     position:relative; width:100%; height:100svh; min-height:560px; max-height:900px;
-    overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end;
+    overflow:hidden; display:flex; flex-direction:column; justify-content:center;
 }
 .hero-bg { position:absolute; inset:0; z-index:0; }
 .hero-bg img { width:100%; height:100%; object-fit:cover; object-position:center 25%; display:block; }
@@ -242,7 +242,7 @@ a { text-decoration: none; color: inherit; }
 /* Hero content */
 .hero-content {
     position:relative; z-index:3;
-    padding:0 1.5rem 4.5rem;
+    padding:6rem 1.5rem 2.5rem;
     max-width:1280px; margin:0 auto; width:100%;
 }
 .hero-display {
@@ -397,23 +397,17 @@ a { text-decoration: none; color: inherit; }
     background:rgba(255,255,255,.04);
     padding:3px;
 }
-/* Slider — padding-bottom 16:9 trick (works on all iOS/Android) */
+/* Slider — explicit heights for reliability */
 .slider {
-    position:relative; border-radius:17px; overflow:hidden; background:#000; width:100%;
-    padding-bottom:56.25%; /* 16:9 */
-    height:0;
+    position:relative; border-radius:17px; overflow:hidden; background:#111;
+    width:100%; height:56vw; max-height:460px; min-height:180px;
 }
 .slides-track {
-    position:absolute; inset:0; width:100%; height:100%;
-    display:flex;
+    display:flex; height:100%;
     transition:transform .85s cubic-bezier(.7,0,.2,1);
 }
 .slide { min-width:100%; flex-shrink:0; height:100%; }
 .slide img { width:100%; height:100%; display:block; object-fit:cover; }
-@media(min-width:601px){
-    /* cap height at 460px on desktop */
-    .slider { padding-bottom:min(56.25%, 460px); }
-}
 .slider-arrow {
     position:absolute; top:50%; transform:translateY(-50%);
     width:44px; height:44px; border-radius:50%;
@@ -440,6 +434,7 @@ a { text-decoration: none; color: inherit; }
     padding:2.25rem; border-radius:24px; position:relative; overflow:hidden;
     background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
     border:1px solid rgba(255,255,255,.08); transition:transform .3s,box-shadow .3s;
+    display:flex; flex-direction:column; height:100%;
 }
 .price-card:hover { transform:translateY(-5px); }
 .price-card.featured {
@@ -617,7 +612,7 @@ a { text-decoration: none; color: inherit; }
 @media(max-width:768px){
     .hero-fullscreen { height:100svh; max-height:none; min-height:500px; }
     .hero-display { font-size:clamp(2.2rem,12vw,4.5rem); }
-    .hero-content { padding:0 1.25rem 3rem; }
+    .hero-content { padding:5rem 1.25rem 2rem; }
     .hero-corner { display:none; }
     .trainer-card { transform-style:flat !important; }
     .btn-primary::after { animation:none; }
