@@ -1,6 +1,7 @@
 /* ============================================================
    SEVER FITNESS — Enhancements
    Map + Yandex rating · breadcrumb · stat-num · image wrap
+   Mobile/desktop adaptive improvements
 ============================================================ */
 
 /* ===== Breadcrumb (page heroes) ===== */
@@ -49,3 +50,38 @@
 }
 .map-frame iframe { display:block; width:100%; height:100%; min-height:420px; border:0; }
 @media(max-width:1024px){ .map-frame { min-height:360px; } .map-frame iframe { min-height:360px; } }
+
+/* ===== Mobile responsive improvements ===== */
+@media(max-width:768px) {
+    /* Tighter section padding on mobile */
+    .section { padding:2.5rem 1rem; }
+    .page-hero { padding:6rem 1rem 2.5rem; }
+
+    /* CTA card: less padding, centered buttons stack */
+    .glass-card.p-10 { padding:1.75rem; }
+
+    /* Map: stack to single column */
+    .map-frame { min-height:280px; }
+    .map-frame iframe { min-height:280px; }
+
+    /* Rating badge: smaller text on mobile */
+    .map-rating { font-size:.78rem; padding:.5rem 1rem; gap:.5rem; }
+    .map-rating-val { font-size:1rem; }
+
+    /* Breadcrumb smaller */
+    .breadcrumb { font-size:.72rem; margin-bottom:1rem; }
+
+    /* Social cards: smaller gap and padding */
+    .glass-card.p-8 { padding:1.25rem; }
+
+    /* Review card: smaller padding */
+    .rev-text { font-size:.92rem; }
+    .rev-ava { width:40px; height:40px; font-size:.75rem; }
+}
+
+/* ===== Desktop enhancements ===== */
+@media(min-width:1280px) {
+    .section { padding:5.5rem 2rem; }
+    .map-frame { min-height:480px; }
+    .map-frame iframe { min-height:480px; }
+}
