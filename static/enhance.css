@@ -1,0 +1,51 @@
+/* ============================================================
+   SEVER FITNESS — Enhancements
+   Map + Yandex rating · breadcrumb · stat-num · image wrap
+============================================================ */
+
+/* ===== Breadcrumb (page heroes) ===== */
+.breadcrumb {
+    font-size:.8rem; color:rgba(255,255,255,.4); margin-bottom:1.25rem;
+    letter-spacing:.04em; text-transform:uppercase;
+}
+.breadcrumb a { color:rgba(255,255,255,.55); transition:color .25s; }
+.breadcrumb a:hover { color:var(--ember); }
+.breadcrumb span { color:var(--ember-soft); }
+
+/* ===== Stat numbers (about page) ===== */
+.stat-num {
+    font-family:'Unbounded',sans-serif; font-weight:900;
+    font-size:clamp(2rem,5vw,3.2rem); line-height:1;
+    background:linear-gradient(135deg,var(--ember),var(--gold));
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+    filter:drop-shadow(0 0 16px rgba(230,255,0,.45));
+}
+
+/* ===== Image wrapper (about page) ===== */
+.hero-img-wrap {
+    position:relative; overflow:hidden; border-radius:24px;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 30px 80px -20px rgba(0,0,0,.7);
+}
+.hero-img-wrap img { width:100%; height:100%; object-fit:cover; }
+.hero-img-wrap.aspect-square { aspect-ratio:1/1; }
+
+/* ===== Map + Yandex rating ===== */
+.map-rating {
+    display:inline-flex; align-items:center; gap:.7rem; flex-wrap:wrap; justify-content:center;
+    margin-top:1.25rem; padding:.6rem 1.3rem; border-radius:9999px;
+    background:rgba(212,255,0,.08); border:1px solid rgba(212,255,0,.25);
+    transition:background .25s,border-color .25s,box-shadow .25s,transform .25s;
+}
+.map-rating:hover { background:rgba(212,255,0,.14); border-color:rgba(212,255,0,.45); box-shadow:0 0 28px rgba(212,255,0,.15); transform:translateY(-2px); }
+.map-rating-stars { color:var(--ember); letter-spacing:2px; text-shadow:0 0 14px rgba(230,255,0,.5); }
+.map-rating-val { font-family:'Unbounded',sans-serif; font-weight:900; font-size:1.15rem; color:var(--ember-soft); }
+.map-rating-meta { font-size:.8rem; color:rgba(255,255,255,.55); }
+.map-frame {
+    position:relative; overflow:hidden; border-radius:20px;
+    border:1px solid rgba(255,255,255,.08); background:var(--ash);
+    min-height:420px;
+    box-shadow:0 24px 70px -20px rgba(0,0,0,.7);
+}
+.map-frame iframe { display:block; width:100%; height:100%; min-height:420px; border:0; }
+@media(max-width:1024px){ .map-frame { min-height:360px; } .map-frame iframe { min-height:360px; } }
